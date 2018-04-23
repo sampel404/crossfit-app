@@ -1,3 +1,3 @@
-# React projekt
+# React projekt crossfit-app
 
 # crossfit-app
