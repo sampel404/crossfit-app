@@ -32,14 +32,53 @@ resultsPlaces.sort((a,b)=>{
     return a.score - b.score;
 });
 
-class TableRow extends React.Component{
+class TableHead extends React.Component{
+
+    sortByName=()=>{
+        if(this.props.sortedBy === 'surname') {
+            this.props.reverseTable();
+        } else {
+            this.props.sortBy('surname');
+        }
+    };
+
+    sortByPoints=()=>{
+        if(this.props.sortedBy === 'score') {
+            this.props.reverseTable();
+        } else {
+            this.props.sortBy('score');
+        }
+    };
+
+    sortByExercise=(index)=>{
+        if(this.props.sortedBy === `exc_${index}`) {
+            this.props.reverseTable();
+        } else {
+            this.props.sortByExercise(index);
+        }
+    };
+
     render(){
         const exercises = this.props.exc.map((ex, i)=>{
-           return <td key={i}>{ex.place} <br/> {ex.result}</td>
+            return <th key={i} onClick={()=>this.sortByExercise(i)}>{ex}</th>
         });
         return <tr>
-            <td>{this.props.name} <br/> {this.props.surname}</td>
-            <td>{this.props.score}</td>
+            <th onClick={this.sortByName}>Imię <br/> nazwisko</th>
+            <th onClick={this.sortByPoints}>Punkty</th>
+            {exercises}
+        </tr>
+    }
+}
+
+class TableRow extends React.Component{
+
+    render(){
+        const exercises = this.props.exc.map((ex, i)=>{
+           return <td id={`tableExercise_${i}`} key={i}>{ex.place} <br/> {ex.result}</td>
+        });
+        return <tr>
+            <td id={'tableName'}>{this.props.name} <br/> {this.props.surname}</td>
+            <td id={'tableScore'}>{this.props.score}</td>
             {exercises}
         </tr>
     }
@@ -49,11 +88,40 @@ class Table extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            table: resultsPlaces
+            table: resultsPlaces,
+            sortedBy: 'score'
         }
     }
+    sortBy=(s)=>{
+        const sortedTable = [...this.state.table].sort((a,b)=>{
+            if (a[s] < b[s])
+                return -1;
+            if (a[s] > b[s])
+                return 1;
+            return 0;
+        });
+        this.setState({
+            table: sortedTable,
+            sortedBy: s
+        });
+    };
+    sortByExercise=(index)=>{
+        const sortedTable = [...this.state.table].sort((a,b)=>{
+            return a.exercises[index].place - b.exercises[index].place;
+        });
+        this.setState({
+            table: sortedTable,
+            sortedBy: `exc_${index}`
+        });
+    };
+    reverseTable=()=>{
+        const reversedTable = [...this.state.table].reverse();
+        this.setState({
+            table: reversedTable
+        });
+    };
     render(){
-        const list = this.state.table.map(el=>{
+        const listTableRow = this.state.table.map(el=>{
             const exc = el.exercises.map(ex=>{
                 return {
                     result: ex.result,
@@ -69,13 +137,21 @@ class Table extends React.Component{
             />
         });
 
-        //pozniej z th komponent do sortownaia z id do zlapania
+        const exercisesNames = this.state.table[0].exercises.map(el=>{
+            return el.name;
+        });
+
         return <table>
             <thead>
-
+                <TableHead
+                    sortBy = {this.sortBy}
+                    sortByExercise = {this.sortByExercise}
+                    sortedBy = {this.state.sortedBy}
+                    reverseTable = {this.reverseTable}
+                    exc = {exercisesNames}/>
             </thead>
             <tbody>
-            {list}
+                {listTableRow}
             </tbody>
         </table>
     }
