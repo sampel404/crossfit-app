@@ -178,7 +178,7 @@ class Table extends React.Component{
             return el.name;
         });
 
-        return <table>
+        return <table className='table table-vcenter table-hover'>
             <thead>
                 <TableHead
                     sortBy = {this.sortBy}
