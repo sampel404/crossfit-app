@@ -33,38 +33,75 @@ resultsPlaces.sort((a,b)=>{
 });
 
 class TableHead extends React.Component{
+    constructor(props){
+        super(props);
+        this.arrows= [<div className={'arrow-down'}> </div>, <div className={'arrow-up'}> </div>];
+        this.state = {
+            currArrow : this.arrows[0],
+            arrowPlace: 'score'
+        }
+    }
 
     sortByName=()=>{
         if(this.props.sortedBy === 'surname') {
             this.props.reverseTable();
+            let n = 0;
+            this.state.currArrow === this.arrows[0] ? n = 1 : n = 0;
+            this.setState({
+                currArrow: this.arrows[n]
+            })
         } else {
             this.props.sortBy('surname');
+            this.setState({
+                currArrow : this.arrows[0],
+                arrowPlace: 'surname'
+            })
         }
     };
 
     sortByPoints=()=>{
         if(this.props.sortedBy === 'score') {
+            let n = 0;
+            this.state.currArrow === this.arrows[0] ? n = 1 : n = 0;
+            this.setState({
+                currArrow: this.arrows[n]
+            });
             this.props.reverseTable();
         } else {
             this.props.sortBy('score');
+            this.setState({
+                currArrow : this.arrows[0],
+                arrowPlace: 'score'
+            })
         }
     };
 
     sortByExercise=(index)=>{
         if(this.props.sortedBy === `exc_${index}`) {
+            let n = 0;
+            this.state.currArrow === this.arrows[0] ? n = 1 : n = 0;
+            this.setState({
+                currArrow: this.arrows[n]
+            });
             this.props.reverseTable();
         } else {
             this.props.sortByExercise(index);
+            this.setState({
+                currArrow : this.arrows[0],
+                arrowPlace: `exc_${index}`
+            })
         }
     };
 
     render(){
+        const arrowPlace = this.state.arrowPlace;
+        const currArrow = this.state.currArrow;
         const exercises = this.props.exc.map((ex, i)=>{
-            return <th key={i} onClick={()=>this.sortByExercise(i)}>{ex}</th>
+            return <th key={i} onClick={()=>this.sortByExercise(i)}>{ex} {arrowPlace === `exc_${i}` && currArrow}</th>
         });
         return <tr>
-            <th onClick={this.sortByName}>Imię <br/> nazwisko</th>
-            <th onClick={this.sortByPoints}>Punkty</th>
+            <th onClick={this.sortByName}>Imię i nazwisko {arrowPlace === 'surname' && currArrow}</th>
+            <th onClick={this.sortByPoints}>Punkty {arrowPlace === 'score' && currArrow}</th>
             {exercises}
         </tr>
     }
@@ -78,7 +115,7 @@ class TableRow extends React.Component{
         });
         return <tr>
             <td id={'tableName'}>{this.props.name} <br/> {this.props.surname}</td>
-            <td id={'tableScore'}>{this.props.score}</td>
+            <td id={'tableScore'}>{this.props.score} </td>
             {exercises}
         </tr>
     }
