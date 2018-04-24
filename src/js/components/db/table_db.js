@@ -10,26 +10,31 @@ module.exports = [
     "score": 0,
     "exercises": [
         {
+          "name": 18.1,
           "unit": "seconds",
           "result": 44,
           "place": null
         },
         {
+          "name": 18.2,
           "unit": "reps",
           "result": 23,
           "place": null
         },
         {
+          "name": 18.3,
           "unit": "kg",
           "result": 189,
           "place": null
         },
         {
+          "name": 18.4,
           "unit": "reps",
           "result": 13,
           "place": null
         },
         {
+          "name": 18.5,
           "unit": "seconds",
           "result": 51,
           "place": null
@@ -47,26 +52,31 @@ module.exports = [
     "score": 0,
     "exercises": [
         {
+          "name": 18.1,
           "unit": "seconds",
           "result": 44,
           "place": null
         },
         {
+          "name": 18.2,
           "unit": "reps",
           "result": 15,
           "place": null
         },
         {
+          "name": 18.3,
           "unit": "kg",
           "result": 196,
           "place": null
         },
         {
+          "name": 18.4,
           "unit": "reps",
           "result": 15,
           "place": null
         },
         {
+          "name": 18.5,
           "unit": "seconds",
           "result": 78,
           "place": null
@@ -84,26 +94,31 @@ module.exports = [
     "score": 0,
     "exercises": [
         {
+          "name": 18.1,
           "unit": "seconds",
           "result": 100,
           "place": null
         },
         {
+          "name": 18.2,
           "unit": "reps",
           "result": 39,
           "place": null
         },
         {
+          "name": 18.3,
           "unit": "kg",
           "result": 220,
           "place": null
         },
         {
+          "name": 18.4,
           "unit": "reps",
           "result": 15,
           "place": null
         },
         {
+          "name": 18.5,
           "unit": "seconds",
           "result": 82,
           "place": null
@@ -121,26 +136,31 @@ module.exports = [
     "score": 0,
     "exercises": [
         {
+          "name": 18.1,
           "unit": "seconds",
           "result": 63,
           "place": null
         },
         {
+          "name": 18.2,
           "unit": "reps",
           "result": 15,
           "place": null
         },
         {
+          "name": 18.3,
           "unit": "kg",
           "result": 168,
           "place": null
         },
         {
+          "name": 18.4,
           "unit": "reps",
           "result": 17,
           "place": null
         },
         {
+          "name": 18.5,
           "unit": "seconds",
           "result": 51,
           "place": null
@@ -158,26 +178,31 @@ module.exports = [
     "score": 0,
     "exercises": [
         {
+          "name": 18.1,
           "unit": "seconds",
           "result": 49,
           "place": null
         },
         {
+          "name": 18.2,
           "unit": "reps",
           "result": 22,
           "place": null
         },
         {
+          "name": 18.3,
           "unit": "kg",
           "result": 152,
           "place": null
         },
         {
+          "name": 18.4,
           "unit": "reps",
           "result": 16,
           "place": null
         },
         {
+          "name": 18.5,
           "unit": "seconds",
           "result": 90,
           "place": null
@@ -195,26 +220,31 @@ module.exports = [
     "score": 0,
     "exercises": [
         {
+          "name": 18.1,
           "unit": "seconds",
           "result": 96,
           "place": null
         },
         {
+          "name": 18.2,
           "unit": "reps",
           "result": 11,
           "place": null
         },
         {
+          "name": 18.3,
           "unit": "kg",
           "result": 150,
           "place": null
         },
         {
+          "name": 18.4,
           "unit": "reps",
           "result": 13,
           "place": null
         },
         {
+          "name": 18.5,
           "unit": "seconds",
           "result": 106,
           "place": null
@@ -232,26 +262,31 @@ module.exports = [
     "score": 0,
     "exercises": [
         {
+          "name": 18.1,
           "unit": "seconds",
           "result": 98,
           "place": null
         },
         {
+          "name": 18.2,
           "unit": "reps",
           "result": 10,
           "place": null
         },
         {
+          "name": 18.3,
           "unit": "kg",
           "result": 177,
           "place": null
         },
         {
+          "name": 18.4,
           "unit": "reps",
           "result": 11,
           "place": null
         },
         {
+          "name": 18.5,
           "unit": "seconds",
           "result": 76,
           "place": null
@@ -269,26 +304,31 @@ module.exports = [
     "score": 0,
     "exercises": [
         {
+          "name": 18.1,
           "unit": "seconds",
           "result": 58,
           "place": null
         },
         {
+          "name": 18.2,
           "unit": "reps",
           "result": 39,
           "place": null
         },
         {
+          "name": 18.3,
           "unit": "kg",
           "result": 103,
           "place": null
         },
         {
+          "name": 18.4,
           "unit": "reps",
           "result": 12,
           "place": null
         },
         {
+          "name": 18.5,
           "unit": "seconds",
           "result": 117,
           "place": null
@@ -306,26 +346,31 @@ module.exports = [
     "score": 0,
     "exercises": [
         {
+          "name": 18.1,
           "unit": "seconds",
           "result": 77,
           "place": null
         },
         {
+          "name": 18.2,
           "unit": "reps",
           "result": 12,
           "place": null
         },
         {
+          "name": 18.3,
           "unit": "kg",
           "result": 163,
           "place": null
         },
         {
+          "name": 18.4,
           "unit": "reps",
           "result": 12,
           "place": null
         },
         {
+          "name": 18.5,
           "unit": "seconds",
           "result": 62,
           "place": null
@@ -343,26 +388,31 @@ module.exports = [
     "score": 0,
     "exercises": [
         {
+          "name": 18.1,
           "unit": "seconds",
           "result": 50,
           "place": null
         },
         {
+          "name": 18.2,
           "unit": "reps",
           "result": 16,
           "place": null
         },
         {
+          "name": 18.3,
           "unit": "kg",
           "result": 144,
           "place": null
         },
         {
+          "name": 18.4,
           "unit": "reps",
           "result": 13,
           "place": null
         },
         {
+          "name": 18.5,
           "unit": "seconds",
           "result": 46,
           "place": null
@@ -380,26 +430,31 @@ module.exports = [
     "score": 0,
     "exercises": [
         {
+          "name": 18.1,
           "unit": "seconds",
           "result": 56,
           "place": null
         },
         {
+          "name": 18.2,
           "unit": "reps",
           "result": 16,
           "place": null
         },
         {
+          "name": 18.3,
           "unit": "kg",
           "result": 167,
           "place": null
         },
         {
+          "name": 18.4,
           "unit": "reps",
           "result": 15,
           "place": null
         },
         {
+          "name": 18.5,
           "unit": "seconds",
           "result": 48,
           "place": null
@@ -417,26 +472,31 @@ module.exports = [
     "score": 0,
     "exercises": [
         {
+          "name": 18.1,
           "unit": "seconds",
           "result": 30,
           "place": null
         },
         {
+          "name": 18.2,
           "unit": "reps",
           "result": 16,
           "place": null
         },
         {
+          "name": 18.3,
           "unit": "kg",
           "result": 104,
           "place": null
         },
         {
+          "name": 18.4,
           "unit": "reps",
           "result": 18,
           "place": null
         },
         {
+          "name": 18.5,
           "unit": "seconds",
           "result": 87,
           "place": null
@@ -454,26 +514,31 @@ module.exports = [
     "score": 0,
     "exercises": [
         {
+          "name": 18.1,
           "unit": "seconds",
           "result": 112,
           "place": null
         },
         {
+          "name": 18.2,
           "unit": "reps",
           "result": 21,
           "place": null
         },
         {
+          "name": 18.3,
           "unit": "kg",
           "result": 191,
           "place": null
         },
         {
+          "name": 18.4,
           "unit": "reps",
           "result": 20,
           "place": null
         },
         {
+          "name": 18.5,
           "unit": "seconds",
           "result": 89,
           "place": null
@@ -491,26 +556,31 @@ module.exports = [
     "score": 0,
     "exercises": [
         {
+          "name": 18.1,
           "unit": "seconds",
           "result": 38,
           "place": null
         },
         {
+          "name": 18.2,
           "unit": "reps",
           "result": 18,
           "place": null
         },
         {
+          "name": 18.3,
           "unit": "kg",
           "result": 217,
           "place": null
         },
         {
+          "name": 18.4,
           "unit": "reps",
           "result": 15,
           "place": null
         },
         {
+          "name": 18.5,
           "unit": "seconds",
           "result": 38,
           "place": null
@@ -528,26 +598,31 @@ module.exports = [
     "score": 0,
     "exercises": [
         {
+          "name": 18.1,
           "unit": "seconds",
           "result": 72,
           "place": null
         },
         {
+          "name": 18.2,
           "unit": "reps",
           "result": 13,
           "place": null
         },
         {
+          "name": 18.3,
           "unit": "kg",
           "result": 212,
           "place": null
         },
         {
+          "name": 18.4,
           "unit": "reps",
           "result": 14,
           "place": null
         },
         {
+          "name": 18.5,
           "unit": "seconds",
           "result": 34,
           "place": null
@@ -565,26 +640,31 @@ module.exports = [
     "score": 0,
     "exercises": [
         {
+          "name": 18.1,
           "unit": "seconds",
           "result": 77,
           "place": null
         },
         {
+          "name": 18.2,
           "unit": "reps",
           "result": 27,
           "place": null
         },
         {
+          "name": 18.3,
           "unit": "kg",
           "result": 164,
           "place": null
         },
         {
+          "name": 18.4,
           "unit": "reps",
           "result": 14,
           "place": null
         },
         {
+          "name": 18.5,
           "unit": "seconds",
           "result": 54,
           "place": null
@@ -602,26 +682,31 @@ module.exports = [
     "score": 0,
     "exercises": [
         {
+          "name": 18.1,
           "unit": "seconds",
           "result": 31,
           "place": null
         },
         {
+          "name": 18.2,
           "unit": "reps",
           "result": 10,
           "place": null
         },
         {
+          "name": 18.3,
           "unit": "kg",
           "result": 142,
           "place": null
         },
         {
+          "name": 18.4,
           "unit": "reps",
           "result": 14,
           "place": null
         },
         {
+          "name": 18.5,
           "unit": "seconds",
           "result": 106,
           "place": null
@@ -639,26 +724,31 @@ module.exports = [
     "score": 0,
     "exercises": [
         {
+          "name": 18.1,
           "unit": "seconds",
           "result": 99,
           "place": null
         },
         {
+          "name": 18.2,
           "unit": "reps",
           "result": 31,
           "place": null
         },
         {
+          "name": 18.3,
           "unit": "kg",
           "result": 157,
           "place": null
         },
         {
+          "name": 18.4,
           "unit": "reps",
           "result": 13,
           "place": null
         },
         {
+          "name": 18.5,
           "unit": "seconds",
           "result": 84,
           "place": null
@@ -676,26 +766,31 @@ module.exports = [
     "score": 0,
     "exercises": [
         {
+          "name": 18.1,
           "unit": "seconds",
           "result": 62,
           "place": null
         },
         {
+          "name": 18.2,
           "unit": "reps",
           "result": 46,
           "place": null
         },
         {
+          "name": 18.3,
           "unit": "kg",
           "result": 169,
           "place": null
         },
         {
+          "name": 18.4,
           "unit": "reps",
           "result": 20,
           "place": null
         },
         {
+          "name": 18.5,
           "unit": "seconds",
           "result": 98,
           "place": null
@@ -713,26 +808,31 @@ module.exports = [
     "score": 0,
     "exercises": [
         {
+          "name": 18.1,
           "unit": "seconds",
           "result": 43,
           "place": null
         },
         {
+          "name": 18.2,
           "unit": "reps",
           "result": 43,
           "place": null
         },
         {
+          "name": 18.3,
           "unit": "kg",
           "result": 205,
           "place": null
         },
         {
+          "name": 18.4,
           "unit": "reps",
           "result": 15,
           "place": null
         },
         {
+          "name": 18.5,
           "unit": "seconds",
           "result": 119,
           "place": null
@@ -750,26 +850,31 @@ module.exports = [
     "score": 0,
     "exercises": [
         {
+          "name": 18.1,
           "unit": "seconds",
           "result": 44,
           "place": null
         },
         {
+          "name": 18.2,
           "unit": "reps",
           "result": 23,
           "place": null
         },
         {
+          "name": 18.3,
           "unit": "kg",
           "result": 193,
           "place": null
         },
         {
+          "name": 18.4,
           "unit": "reps",
           "result": 11,
           "place": null
         },
         {
+          "name": 18.5,
           "unit": "seconds",
           "result": 93,
           "place": null
@@ -787,26 +892,31 @@ module.exports = [
     "score": 0,
     "exercises": [
         {
+          "name": 18.1,
           "unit": "seconds",
           "result": 75,
           "place": null
         },
         {
+          "name": 18.2,
           "unit": "reps",
           "result": 17,
           "place": null
         },
         {
+          "name": 18.3,
           "unit": "kg",
           "result": 155,
           "place": null
         },
         {
+          "name": 18.4,
           "unit": "reps",
           "result": 14,
           "place": null
         },
         {
+          "name": 18.5,
           "unit": "seconds",
           "result": 66,
           "place": null
@@ -824,26 +934,31 @@ module.exports = [
     "score": 0,
     "exercises": [
         {
+          "name": 18.1,
           "unit": "seconds",
           "result": 112,
           "place": null
         },
         {
+          "name": 18.2,
           "unit": "reps",
           "result": 50,
           "place": null
         },
         {
+          "name": 18.3,
           "unit": "kg",
           "result": 148,
           "place": null
         },
         {
+          "name": 18.4,
           "unit": "reps",
           "result": 20,
           "place": null
         },
         {
+          "name": 18.5,
           "unit": "seconds",
           "result": 115,
           "place": null
@@ -861,26 +976,31 @@ module.exports = [
     "score": 0,
     "exercises": [
         {
+          "name": 18.1,
           "unit": "seconds",
           "result": 73,
           "place": null
         },
         {
+          "name": 18.2,
           "unit": "reps",
           "result": 28,
           "place": null
         },
         {
+          "name": 18.3,
           "unit": "kg",
           "result": 183,
           "place": null
         },
         {
+          "name": 18.4,
           "unit": "reps",
           "result": 10,
           "place": null
         },
         {
+          "name": 18.5,
           "unit": "seconds",
           "result": 52,
           "place": null
@@ -898,26 +1018,31 @@ module.exports = [
     "score": 0,
     "exercises": [
         {
+          "name": 18.1,
           "unit": "seconds",
           "result": 52,
           "place": null
         },
         {
+          "name": 18.2,
           "unit": "reps",
           "result": 19,
           "place": null
         },
         {
+          "name": 18.3,
           "unit": "kg",
           "result": 128,
           "place": null
         },
         {
+          "name": 18.4,
           "unit": "reps",
           "result": 14,
           "place": null
         },
         {
+          "name": 18.5,
           "unit": "seconds",
           "result": 38,
           "place": null
@@ -935,26 +1060,31 @@ module.exports = [
     "score": 0,
     "exercises": [
         {
+          "name": 18.1,
           "unit": "seconds",
           "result": 109,
           "place": null
         },
         {
+          "name": 18.2,
           "unit": "reps",
           "result": 27,
           "place": null
         },
         {
+          "name": 18.3,
           "unit": "kg",
           "result": 205,
           "place": null
         },
         {
+          "name": 18.4,
           "unit": "reps",
           "result": 16,
           "place": null
         },
         {
+          "name": 18.5,
           "unit": "seconds",
           "result": 99,
           "place": null
@@ -972,26 +1102,31 @@ module.exports = [
     "score": 0,
     "exercises": [
         {
+          "name": 18.1,
           "unit": "seconds",
           "result": 60,
           "place": null
         },
         {
+          "name": 18.2,
           "unit": "reps",
           "result": 43,
           "place": null
         },
         {
+          "name": 18.3,
           "unit": "kg",
           "result": 186,
           "place": null
         },
         {
+          "name": 18.4,
           "unit": "reps",
           "result": 12,
           "place": null
         },
         {
+          "name": 18.5,
           "unit": "seconds",
           "result": 108,
           "place": null
@@ -1009,26 +1144,31 @@ module.exports = [
     "score": 0,
     "exercises": [
         {
+          "name": 18.1,
           "unit": "seconds",
           "result": 75,
           "place": null
         },
         {
+          "name": 18.2,
           "unit": "reps",
           "result": 47,
           "place": null
         },
         {
+          "name": 18.3,
           "unit": "kg",
           "result": 125,
           "place": null
         },
         {
+          "name": 18.4,
           "unit": "reps",
           "result": 16,
           "place": null
         },
         {
+          "name": 18.5,
           "unit": "seconds",
           "result": 108,
           "place": null
@@ -1046,26 +1186,31 @@ module.exports = [
     "score": 0,
     "exercises": [
         {
+          "name": 18.1,
           "unit": "seconds",
           "result": 96,
           "place": null
         },
         {
+          "name": 18.2,
           "unit": "reps",
           "result": 33,
           "place": null
         },
         {
+          "name": 18.3,
           "unit": "kg",
           "result": 178,
           "place": null
         },
         {
+          "name": 18.4,
           "unit": "reps",
           "result": 15,
           "place": null
         },
         {
+          "name": 18.5,
           "unit": "seconds",
           "result": 87,
           "place": null
@@ -1083,30 +1228,35 @@ module.exports = [
     "score": 0,
     "exercises": [
         {
+          "name": 18.1,
           "unit": "seconds",
           "result": 67,
           "place": null
         },
         {
+          "name": 18.2,
           "unit": "reps",
           "result": 13,
           "place": null
         },
         {
+          "name": 18.3,
           "unit": "kg",
           "result": 101,
           "place": null
         },
         {
+          "name": 18.4,
           "unit": "reps",
           "result": 14,
           "place": null
         },
         {
+          "name": 18.5,
           "unit": "seconds",
           "result": 50,
           "place": null
         }
     ]
   }
-]
+];
