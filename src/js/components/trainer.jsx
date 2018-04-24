@@ -54,7 +54,7 @@ class Trainer extends React.Component{
                             <tbody>
                             <tr>
                                 <td className="font-w500">1</td>
-                                <td>MATHEW FRASER</td>
+                                <td><a href="link link-effect">MATHEW FRASER</a></td>
                                 <td>97</td>
                                 <td>4th (476 reps)</td>
                                 <td>49th (4:02)</td>
@@ -66,7 +66,7 @@ class Trainer extends React.Component{
                             </tr>
                             <tr>
                                 <td className="font-w500">2</td>
-                                <td>MATHEW FRASER</td>
+                                <td><a href="link link-effect">MATHEW FRASER</a></td>
                                 <td>97</td>
                                 <td>4th (476 reps)</td>
                                 <td>49th (4:02)</td>
@@ -78,7 +78,7 @@ class Trainer extends React.Component{
                             </tr>
                             <tr>
                                 <td>3</td>
-                                <td>MATHEW FRASER</td>
+                                <td><a href="link link-effect">MATHEW FRASER</a></td>
                                 <td>97</td>
                                 <td>4th (476 reps)</td>
                                 <td>49th (4:02)</td>
@@ -90,7 +90,7 @@ class Trainer extends React.Component{
                             </tr>
                             <tr>
                                 <td>4</td>
-                                <td>MATHEW FRASER</td>
+                                <td><a href="link link-effect">MATHEW FRASER</a></td>
                                 <td>97</td>
                                 <td>4th (476 reps)</td>
                                 <td>49th (4:02)</td>
@@ -102,7 +102,7 @@ class Trainer extends React.Component{
                             </tr>
                             <tr>
                                 <td>5</td>
-                                <td>MATHEW FRASER</td>
+                                <td><a href="link link-effect">MATHEW FRASER</a></td>
                                 <td>97</td>
                                 <td>4th (476 reps)</td>
                                 <td>49th (4:02)</td>
@@ -114,7 +114,7 @@ class Trainer extends React.Component{
                             </tr>
                             <tr>
                                 <td>1</td>
-                                <td>MATHEW FRASER</td>
+                                <td><a href="link link-effect">MATHEW FRASER</a></td>
                                 <td>97</td>
                                 <td>4th (476 reps)</td>
                                 <td>49th (4:02)</td>
