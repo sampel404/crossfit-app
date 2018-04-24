@@ -1,0 +1,387 @@
+@mixin flex {
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+@mixin flex-item ($grow, $shrink, $basis) {
+	flex: $grow $shrink $basis;
+	-moz-flex: $grow $shrink $basis;
+	-ms-flex: $grow $shrink $basis;
+	-webkit-flex: $grow $shrink $basis;
+	-webkit-box-flex: $grow $shrink $basis;
+}
+
+@mixin flex-justify-content ($align) {
+	justify-content: $align;
+
+	// IE Style
+	@if ($align == 'center') {
+		-ms-flex-pack: center;
+	}
+	@if ($align == 'flex-end') {
+		-ms-flex-pack: end;
+	}
+	@if ($align == 'flex-start') {
+		-ms-flex-pack: start;
+	}
+	@if ($align == 'space-around') {
+		-ms-flex-pack: distribute;
+	}
+	@if ($align == 'space-between') {
+		-ms-flex-pack: justify;
+	}
+
+	-webkit-justify-content: $align;
+}
+
+@mixin flex-align-items ($align) {
+	align-items: $align;
+
+	// IE Style
+	@if ($align == 'center') {
+		-ms-flex-align: $align;
+	}
+	@if ($align == 'flex-end') {
+		-ms-flex-align: end;
+	}
+	@if ($align == 'flex-start') {
+		-ms-flex-align: start;
+	}
+	@if ($align == 'stretch') {
+		-ms-flex-align: $align;
+	}
+
+	-webkit-align-items: $align;
+}
+
+@mixin flex-direction ($direction) {
+	flex-direction: $direction;
+	-ms-flex-direction: $direction;
+	-webkit-flex-direction: $direction;
+}
+
+@mixin flex-wrap ($wrap) {
+	flex-wrap: $wrap;
+	-ms-flex-wrap: $wrap;
+	-webkit-flex-wrap: $wrap;
+}
+
+@mixin flex-basis ($width) {
+	flex-basis: $width;
+
+	// IE Style
+	-ms-flex-preferred-size: $width;
+
+	-webkit-flex-basis: $width;
+}
+
+@mixin order($order){
+	-webkit-order: $order;
+	-ms-flex-order: $order;
+	order: $order;
+}
+
+
+// Framework flex grid generation
+
+@mixin container-flex-fixed($gutter: $grid-gutter-width) {
+	margin-right: auto;
+	margin-left: auto;
+	padding-left:  ($gutter / 2);
+	padding-right: ($gutter / 2);
+}
+
+@mixin make-flex-row($gutter: $grid-gutter-width) {
+	margin-left:  ($gutter / -2);
+	margin-right: ($gutter / -2);
+
+	@include flex;
+	@include flex-item (0, 1, auto);
+	@include flex-direction (row);
+	@include flex-wrap (wrap);
+}
+
+// Extended
+@mixin make-flex-row-ext {
+	@include flex;
+	@include flex-item (0, 1, auto);
+	@include flex-direction (row);
+	@include flex-wrap (wrap);
+}
+
+@mixin make-flex-grid-column($columns, $class) {
+	$list: ".col-#{$class}, .col-#{$class}-size";
+	@for $i from 1 through $columns {
+		$list: "#{$list}, .col-#{$class}-#{$i}"
+	}
+	#{$list} {
+		// position: relative; - do sprawdzenia!!!
+
+		@include flex-item (0, 0, auto);
+		padding-left:  ($grid-gutter-width / 2);
+		padding-right: ($grid-gutter-width / 2);
+	}
+	.col-#{$class}-separator {
+		width: $grid-gutter-width;
+	}
+}
+
+// flex column
+@mixin make-flex-column() {
+	@include flex;
+	@include flex-direction (column);
+	@include flex-wrap (wrap);
+}
+
+@mixin make-flex-column-additions() {
+	.column {
+		.column-size {
+			@include flex-item (0, 0, auto);
+		}
+		.column-auto {
+			@include flex-item (1, 0, auto);
+			max-width: 100%;
+			min-width: 0; //fix for overflow with flex in FF
+			-ms-flex-positive: 1;
+			-ms-flex-negative: 0;
+			-ms-flex-preferred-size: auto;
+		}
+
+		.column-size,
+		.column-auto {
+			&.column-first {
+				@include order (-1);
+			}
+
+			&.column-last {
+				@include order (1);
+			}
+		}
+
+		&.column-start {
+			@include flex-justify-content (flex-start);
+			text-align: start;
+		}
+
+		&.column-center {
+			@include flex-justify-content (center);
+			text-align: center;
+		}
+
+		&.column-end {
+			@include flex-justify-content (flex-end);
+			text-align: end;
+		}
+
+		&.column-left {
+			@include flex-align-items (flex-start);
+		}
+
+		&.column-middle {
+			@include flex-align-items (center);
+		}
+
+		&.column-right {
+			@include flex-align-items (flex-end);
+		}
+
+		&.column-around {
+			@include flex-justify-content (space-around);
+		}
+
+		&.column-between {
+			@include flex-justify-content (space-between);
+		}
+	}
+}
+
+// Extended
+@mixin make-flex-grid-ext-column($columns, $class) {
+	$list: ".row-ext > .col-#{$class}, .row-ext > .col-#{$class}-size";
+	@for $i from 1 through $columns {
+		$list: "#{$list}, .row-ext > .col-#{$class}-#{$i}"
+	}
+	#{$list} {
+		// position: relative; - do sprawdzenia!!!
+
+		// @include flex-item (0, 0, auto);
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+@mixin calc-flex-grid-column($index, $class, $type) {
+	@if ($type == width) and ($index > 0) {
+		.col-#{$class}-#{$index} {
+			@include flex-basis (percentage(($index / $grid-columns)));
+			max-width: percentage(($index / $grid-columns));
+		}
+	}
+	@if ($type == offset) {
+		.col-#{$class}-offset-#{$index} {
+			margin-left: percentage(($index / $grid-columns));
+		}
+	}
+}
+
+@mixin loop-flex-grid-columns($columns, $class, $type) {
+	@for $i from 1 through $columns {
+		@include calc-flex-grid-column($i, $class, $type);
+	}
+}
+
+@mixin flex-grid-additional-classes($class){
+	.col-#{$class} {
+		@include flex-item (1, 0, 0);
+		max-width: 100%;
+		min-width: 0; //fix for overflow with flex in FF
+		-ms-flex-positive: 1;
+		-ms-flex-negative: 0;
+		-ms-flex-preferred-size: 0;
+	}
+
+	.start-#{$class} {
+		@include flex-justify-content (flex-start);
+		text-align: start;
+	}
+
+	.center-#{$class} {
+		@include flex-justify-content (center);
+		text-align: center;
+	}
+
+	.end-#{$class} {
+		@include flex-justify-content (flex-end);
+		text-align: end;
+	}
+
+	.stretch-#{$class} {
+		@include flex-align-items (stretch);
+	}
+
+	.top-#{$class} {
+		@include flex-align-items (flex-start);
+	}
+
+	.middle-#{$class} {
+		@include flex-align-items (center);
+	}
+
+	.bottom-#{$class} {
+		@include flex-align-items (flex-end);
+	}
+
+	.around-#{$class} {
+		@include flex-justify-content (space-around);
+	}
+
+	.between-#{$class} {
+		@include flex-justify-content (space-between);
+	}
+
+	.first-#{$class} {
+		@include order (-1);
+	}
+
+	.last-#{$class} {
+		@include order (1);
+	}
+}
+
+// Create grid for specific class
+@mixin make-flex-grid($class) {
+	@include make-flex-grid-column($grid-columns, $class);
+	@include make-flex-grid-ext-column($grid-columns, $class);
+	@include loop-flex-grid-columns($grid-columns, $class, width);
+	@include loop-flex-grid-columns($grid-columns, $class, offset);
+	@include make-flex-column-additions();
+	@include flex-grid-additional-classes($class);
+}
+
+
+// Fluid container
+//
+// Utilizes the mixin meant for fixed width containers, but without any defined
+// width for fluid, full width layouts.
+
+.container-fluid {
+  @include container-flex-fixed;
+}
+
+
+// Row
+//
+// Rows contain and clear the floats of your columns.
+
+.row {
+  @include make-flex-row;  
+
+  &.reverse {
+    @include flex-direction (row-reverse);
+  }
+}
+
+.row-ext {
+  @include make-flex-row-ext;  
+
+  &.reverse {
+    @include flex-direction (row-reverse);
+  }
+}
+
+.column {
+  @include make-flex-column;
+
+  &.reverse {
+    @include flex-direction (column-reverse);
+  }
+}
+
+
+// Columns
+//
+// Common styles for small and large grid columns
+
+// @include make-flex-grid-columns;
+
+
+// Extra small grid
+//
+// Columns, offsets, pushes, and pulls for extra small devices like
+// smartphones.
+
+@include make-flex-grid(xs);
+@include make-flex-grid(sm);
+@include make-flex-grid(md);
+@include make-flex-grid(lg);
+
+
+// Small grid
+//
+// Columns, offsets, pushes, and pulls for the small device range, from phones
+// to tablets.
+
+// @media (min-width: $screen-sm-min) {
+//   @include make-flex-grid(sm);
+// }
+
+// Medium grid
+//
+// Columns, offsets, pushes, and pulls for the desktop device range.
+
+// @media (min-width: $screen-md-min) {
+//   @include make-flex-grid(md);
+// }
+
+
+// Large grid
+//
+// Columns, offsets, pushes, and pulls for the large desktop device range.
+
+// @media (min-width: $screen-lg-min) {
+//   @include make-flex-grid(lg);
+// }
+

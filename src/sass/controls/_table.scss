@@ -1,0 +1,247 @@
+.table > {
+  thead > tr > th, tbody > tr > th, tfoot > tr > th, thead > tr > td, tbody > tr > td, tfoot > tr > td {
+    padding: 10px 10px;
+    border-top: 1px solid #f0f0f0;
+    font-weight: 300;
+  }
+  thead > tr > th, tbody > tr > th, tfoot > tr > th {
+    padding: 16px 10px 12px;
+    font-size: 10px;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-align: left;
+    border-top: 0;
+  }
+  thead > tr > th {
+    border-bottom: 2px solid $gray-light;
+    padding: 5px 10px !important;
+    color: $brand-primary;
+    cursor: default;
+    user-select: none;
+    white-space: nowrap;
+
+    &.sortable {
+      cursor: pointer;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+
+    &.sorted {
+      &:after {
+        font-size: 6px;
+        margin-left: 8px;
+        margin-top: -2px;
+        vertical-align: middle;
+        font-family: streamline-24px-filled-in;
+      }
+
+      &.sort-desc {
+        &:after {
+          content: "\e621";
+        }
+      }
+
+      &.sort-asc {
+        &:after {
+          content: "\e620";
+        }
+      }
+    }
+  }
+  tbody + tbody {
+    border-top: 1px solid $brand-primary;
+  }
+}
+
+// column widths in tables (prevent breaks)
+.table {
+  .column-operation {
+    white-space: nowrap;
+    .icon-wrapper {
+      display: inline-block;
+      width: 22px;
+      text-align: center;
+    }
+  }
+}
+
+.table-condensed > {
+  thead > tr > td, tbody > tr > td, tfoot > tr > td {
+    padding: 6px 8px;
+  }
+}
+
+.table-bordered {
+  border: 1px solid #e9e9e9;
+  > {
+    thead > tr > th, tbody > tr > th, tfoot > tr > th, thead > tr > td, tbody > tr > td, tfoot > tr > td {
+      border: 1px solid #f0f0f0;
+    }
+    thead > tr > {
+      th, td {
+        border-bottom-width: 1px;
+        border-bottom-color: #e9e9e9;
+      }
+    }
+  }
+}
+
+.table-borderless {
+  border: none;
+  > {
+    thead > tr > th, tbody > tr > th, tfoot > tr > th, thead > tr > td, tbody > tr > td, tfoot > tr > td {
+      border: none;
+    }
+    thead > tr > {
+      th, td {
+        border-bottom: 1px solid $brand-primary;
+      }
+    }
+  }
+}
+
+.table-vcenter > {
+  thead > tr > th, tbody > tr > th, tfoot > tr > th, thead > tr > td, tbody > tr > td, tfoot > tr > td {
+    vertical-align: middle;
+  }
+}
+
+.table-no-margin {
+  margin-bottom: 0;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #f9f9f9;
+}
+
+.table-hover > tbody > tr:hover {
+  background-color: #f5f5f5;
+}
+
+.table-header-bg > thead > tr > {
+  th, td {
+    color: #fff;
+    background-color: #4f92e4;
+    border-bottom-color: #4f92e4;
+  }
+}
+
+.table > {
+  thead > tr > td.active, tbody > tr > td.active, tfoot > tr > td.active, thead > tr > th.active, tbody > tr > th.active, tfoot > tr > th.active, thead > tr.active > td, tbody > tr.active > td, tfoot > tr.active > td, thead > tr.active > th, tbody > tr.active > th, tfoot > tr.active > th {
+    background-color: #f9f9f9;
+  }
+}
+
+.table {
+  &.table {
+    background-color: transparent;
+  }
+}
+
+.table-hover > tbody > tr {
+  > {
+    td.active:hover, th.active:hover {
+      background-color: #ececec;
+    }
+  }
+  &.active:hover > td, &:hover > .active, &.active:hover > th {
+    background-color: #ececec;
+  }
+}
+
+.table > {
+  thead > tr > td.success, tbody > tr > td.success, tfoot > tr > td.success, thead > tr > th.success, tbody > tr > th.success, tfoot > tr > th.success, thead > tr.success > td, tbody > tr.success > td, tfoot > tr.success > td, thead > tr.success > th, tbody > tr.success > th, tfoot > tr.success > th {
+    background-color: #e0f5e9;
+  }
+}
+
+.table-hover > tbody > tr {
+  > {
+    td.success:hover, th.success:hover {
+      background-color: #cdefdb;
+    }
+  }
+  &.success:hover > td, &:hover > .success, &.success:hover > th {
+    background-color: #cdefdb;
+  }
+}
+
+.table > {
+  thead > tr > td.info, tbody > tr > td.info, tfoot > tr > td.info, thead > tr > th.info, tbody > tr > th.info, tfoot > tr > th.info, thead > tr.info > td, tbody > tr.info > td, tfoot > tr.info > td, thead > tr.info > th, tbody > tr.info > th, tfoot > tr.info > th {
+    background-color: #edf6fd;
+  }
+}
+
+.table-hover > tbody > tr {
+  > {
+    td.info:hover, th.info:hover {
+      background-color: #d6ebfa;
+    }
+  }
+  &.info:hover > td, &:hover > .info, &.info:hover > th {
+    background-color: #d6ebfa;
+  }
+}
+
+.table > {
+  thead > tr > td.warning, tbody > tr > td.warning, tfoot > tr > td.warning, thead > tr > th.warning, tbody > tr > th.warning, tfoot > tr > th.warning, thead > tr.warning > td, tbody > tr.warning > td, tfoot > tr.warning > td, thead > tr.warning > th, tbody > tr.warning > th, tfoot > tr.warning > th {
+    background-color: #fdf3e5;
+  }
+}
+
+.table-hover > tbody > tr {
+  > {
+    td.warning:hover, th.warning:hover {
+      background-color: #fbe8cd;
+    }
+  }
+  &.warning:hover > td, &:hover > .warning, &.warning:hover > th {
+    background-color: #fbe8cd;
+  }
+}
+
+.table > {
+  thead > tr > td.danger, tbody > tr > td.danger, tfoot > tr > td.danger, thead > tr > th.danger, tbody > tr > th.danger, tfoot > tr > th.danger, thead > tr.danger > td, tbody > tr.danger > td, tfoot > tr.danger > td, thead > tr.danger > th, tbody > tr.danger > th, tfoot > tr.danger > th {
+    background-color: #f9eae8;
+  }
+}
+
+.table > {
+  tfoot > tr > td.summary {
+    border-top: 1px solid $brand-primary;
+  }
+}
+
+.table > {
+  tbody > tr > td.no-border {
+    border-top: none;
+  }
+}
+
+.table-hover > tbody > tr {
+  > {
+    td.danger:hover, th.danger:hover {
+      background-color: #f4d8d4;
+    }
+  }
+  &.danger:hover > td, &:hover > .danger, &.danger:hover > th {
+    background-color: #f4d8d4;
+  }
+}
+
+.table-responsive {
+  -webkit-overflow-scrolling: touch;
+}
+
+.table-small > {
+  thead > tr > th, tbody > tr > th, tfoot > tr > th, thead > tr > td, tbody > tr > td, tfoot > tr > td {
+    padding: 5px 10px 0 0;
+  }
+}
+
+.table-big > {
+  thead > tr > th, tbody > tr > th, tfoot > tr > th, thead > tr > td, tbody > tr > td, tfoot > tr > td {
+    padding: 20px 15px 20px 15px;
+  }
+}

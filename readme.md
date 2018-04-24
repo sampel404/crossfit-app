@@ -1,5 +1,0 @@
-# React projekt
-
-# crossfit-app
-
-...
