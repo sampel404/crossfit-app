@@ -1,0 +1,12 @@
+i {
+	cursor: $cursor-clickable;
+	font-size: $icon-size-sm;
+  &:hover {
+    opacity: $icon-hover-opacity;
+  }
+  &.disabled {
+    opacity: $icon-disabled-opacity;
+    cursor: $cursor-disabled;
+    color: $gray-base;
+  }
+}
