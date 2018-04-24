@@ -54,7 +54,7 @@ class Contact extends React.Component{
                                         </div>
                                         <div className="col-xs">
                                             <p className="font-s16"><span
-                                                className="font-w500">8:00 - 20:00</span> (poniedziałek - niedziela)</p>
+                                                className="font-w500">12:00 - 16:00</span> (wtorek - czwartek)</p>
                                         </div>
                                     </div>
                                     <div className="separator half"></div>
