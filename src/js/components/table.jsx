@@ -3,7 +3,7 @@ import React from 'react';
 class TableHead extends React.Component {
     constructor(props) {
         super(props);
-        this.arrows = [<span className={'arrow-down'}></span>, <span className={'arrow-up'}></span>];
+        this.arrows = [<span className={'sortable sorted'}></span>, <span className={'sortable sorted arrow-up'}></span>];
         this.state = {
             currArrow: this.arrows[0],
             arrowPlace: 'score'
@@ -80,7 +80,8 @@ class TableRow extends React.Component {
 
     render() {
         const exercises = this.props.exc.map((ex, i) => {
-            return <td id={`tableExercise_${i}`} key={i}>{ex.place} <br/> {ex.result}</td>
+            return <td id={`tableExercise_${i}`} key={i}>
+                <strong>{ex.place}</strong> <span className="text-gray-dark">({ex.result})</span></td>
         });
         return <tr>
             <td id={'tableName'}>{this.props.name} {this.props.surname}</td>
