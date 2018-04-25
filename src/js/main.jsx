@@ -8,6 +8,6 @@ console.log(config.data);
 require('../sass/main.scss');
 
 ReactDOM.render(
-    <Routing id={1}/>,
+    <Routing id={config.playerId} loggedAs={config.loggedAs}/>,
     document.getElementById('app')
 );

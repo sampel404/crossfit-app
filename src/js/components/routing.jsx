@@ -44,7 +44,7 @@ class Routing extends React.Component{
                 <Route path='/contact' component={Contact}/>
                 <Route path='/results' component={()=> <Results data={this.state.data}/>}/>
                 <Route path='/records' component={()=> <Records data={this.state.data}/>}/>
-                <Route path='/profile' component={Profile}/>
+                <Route path='/profile' component={()=> <Profile loggedAs={this.props.loggedAs}/>}/>
                 <Route path='/measurement' component={Measurement}/>
             </Switch>
         </HashRouter>;

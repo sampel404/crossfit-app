@@ -1,4 +1,4 @@
 module.exports = {
-    logggedAs: 'player',
+    loggedAs: 'player',
     playerId: 1
 };
