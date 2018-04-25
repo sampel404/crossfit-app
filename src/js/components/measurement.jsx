@@ -3,6 +3,8 @@ import {HeaderBlack} from './headerBlack.jsx';
 import {Submenu} from './submenu.jsx';
 import {Image} from './bgimage.jsx';
 import {Table} from './table.jsx';
+import {MeasurementData} from "./measurementData.jsx";
+
 
 
 class Measurement extends React.Component{
@@ -23,6 +25,7 @@ class Measurement extends React.Component{
                     </div>
                     <div className="block-content block-content-full">
                         <Table/>
+                        <MeasurementData/>
                     </div>
                 </div>
             </div>

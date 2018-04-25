@@ -57,7 +57,7 @@ class Player extends React.Component{
                         </h3>
                     </div>
                     <div className="block-content block-content-full">
-                        <h1 className="text-center">Tu będzie chart</h1>
+                        <h1 className="text-center">Tu nie będzie chart</h1>
                     </div>
                 </div>
             </div>

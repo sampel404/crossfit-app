@@ -1,6 +1,5 @@
 import React from 'react';
 import {App} from './app.jsx';
-
 import {
     HashRouter,
     Route,
@@ -20,25 +19,42 @@ import {Measurement} from './measurement.jsx';
 import {PlayersTable} from './playersTable.jsx';
 
 
-const Routing = () => {
-    return  <HashRouter>
-            <div>
-             <Switch>
-                 <Route exact path='/' component={App}/>
-                 <Route path='/player' component={Player}/>
-                 <Route path='/trainer' component={Trainer}/>
-                 <Route path='/contact' component={Contact}/>
-                 <Route path='/competition' component={Competition}/>
-                 <Route path='/competitionsTable' component={CompetitionsTable}/>
-                 <Route path='/results' component={Results}/>
-                 <Route path='/records' component={Records}/>
-                 <Route path='/profile' component={Profile}/>
-                 <Route path='/measurement' component={Measurement}/>
-                 <Route path='/playersTable' component={PlayersTable}/>
+class Routing extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            data: null
+        }
+    }
+    componentDidMount(){
+        const url = `https://crossfit-app-cl.firebaseio.com/players_${this.props.id}.json`;
 
-           </Switch>
-           </div>
-       </HashRouter>;
+        fetch(url).then(res => res.json())
+            .then(res => {
+                this.setState({
+                    data: res
+                    })
+                }
+            );
+    }
+    render() {
+        return <HashRouter>
+            {/*nawigacja*/}
+            <Switch>
+                <Route exact path='/' component={App}/>
+                <Route path='/player' component={Player}/>
+                <Route path='/trainer' component={Trainer}/>
+                <Route path='/contact' component={Contact}/>
+                <Route path='/competition' component={Competition}/>
+                <Route path='/competitionsTable' component={CompetitionsTable}/>
+                <Route path='/results' component={()=> <Results data={this.state.data}/>}/>
+                <Route path='/records' component={()=> <Records data={this.state.data}/>}/>
+                <Route path='/profile' component={()=> <Profile loggedAs={this.props.loggedAs}/>}/>
+                <Route path='/measurement' component={Measurement}/>
+                <Route path='/playersTable' component={PlayersTable}/>
+            </Switch>
+        </HashRouter>;
+    }
 }
 
 export {Routing}
