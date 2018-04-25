@@ -7,9 +7,10 @@ class MeasurementData extends React.Component{
             person: this.props.data
         }
     }
+    
+
 
     render(){
-
         return <h1>measurement</h1>
     }
 }
