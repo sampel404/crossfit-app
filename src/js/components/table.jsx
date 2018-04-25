@@ -3,7 +3,7 @@ import React from 'react';
 class TableHead extends React.Component {
     constructor(props) {
         super(props);
-        this.arrows = [<div className={'arrow-down'}></div>, <div className={'arrow-up'}></div>];
+        this.arrows = [<span className={'arrow-down'}></span>, <span className={'arrow-up'}></span>];
         this.state = {
             currArrow: this.arrows[0],
             arrowPlace: 'score'
@@ -83,7 +83,7 @@ class TableRow extends React.Component {
             return <td id={`tableExercise_${i}`} key={i}>{ex.place} <br/> {ex.result}</td>
         });
         return <tr>
-            <td id={'tableName'}>{this.props.name} <br/> {this.props.surname}</td>
+            <td id={'tableName'}>{this.props.name} {this.props.surname}</td>
             <td id={'tableScore'}>{this.props.score} </td>
             {exercises}
         </tr>
@@ -195,7 +195,7 @@ class Table extends React.Component {
         });
 
         if(this.state.table) {
-            return <table className='table table-vcenter table-hover'>
+            return <table className="table table-vcenter table-hover table-striped" width="100%">
                 <thead>
                 <TableHead
                     sortBy={this.sortBy}
