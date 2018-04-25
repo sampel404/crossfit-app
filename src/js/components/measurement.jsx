@@ -4,6 +4,8 @@ import {Submenu} from './submenu.jsx';
 import {Image} from './bgimage.jsx';
 import {Table} from './table.jsx';
 import {MeasurementData} from "./measurementData.jsx";
+import {Table} from './table.jsx';
+
 
 
 
@@ -26,6 +28,7 @@ class Measurement extends React.Component{
                     <div className="block-content block-content-full">
                         <Table/>
                         <MeasurementData/>
+                        <Table/>
                     </div>
                 </div>
             </div>

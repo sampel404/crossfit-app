@@ -1,33 +1,65 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {Line} from 'react-chartjs-2';
+
+
+const data = {
+    labels: ["12/03", "13/03", "11/04", "13/04", "18/04", "12/05"],
+    datasets: [
+        {
+            backgroundColor: 'transparent',
+            borderColor: '#333',
+            lineTension: 0,
+            label: 'num of reps',
+            data: [12, 19, 3, 5, 2, 3]
+        },
+        {
+            backgroundColor: 'transparent',
+            borderColor: '#aaa',
+            lineTension: 0,
+            label: 'othr',
+            data: [11, 11, 4, 2, 9, 7]
+        }
+
+    ]
+};
+
 
 class Chart extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            person: null
+            person: this.props.data,
+            exercise: '_1km'
         }
     }
 
     componentDidMount(){
-        const url = `https://crossfit-app-cl.firebaseio.com/players_${this.props.id}.json`;
 
-        fetch(url).then(res => res.json())
-            .then(res => this.createChart(res));
-
-    }
-
-    createChart(res){
-        let person = [...res][0];
-
-        this.setState({
-            person: person
-        });
-        console.log(this.state.person);
     }
 
     render(){
-        return <h1>12</h1>
+        let options;
+
+        if(this.state.person != null){
+            options = Object.keys(this.props.data.excercises).map(el=>{
+                return <option key={el} value={el}>{el}</option>
+            })
+        }
+        return <div>
+            <select>
+                {options}
+            </select>
+            <div>
+                <Line
+                    data={data}
+                    width={400}
+                    height={250}
+                    options={{
+                        maintainAspectRatio: false
+                    }}
+                />
+            </div>
+        </div>
     }
 }
 
