@@ -1,0 +1,238 @@
+.input-size {
+	&.date {
+		width: 112px;
+	}
+}
+
+.input-wrapper {
+	position: relative;
+	display: block;
+	background-color: #fff;
+
+	.form-control {
+		position: relative;
+		background-color: transparent;
+
+		&[disabled] {
+			background-color: $bg-gray-lighter;
+		}
+	}
+
+	&.date {
+		.form-control {
+			padding-right: 26px;
+		}
+
+		> i {
+			position: absolute;
+			width: 1.01em;
+			top: 12px;
+			right: 12px;
+			font-size: 14px;
+			color: $gray-darker;
+		}
+	}
+
+
+	&.select {
+		.form-control {
+			padding-right: 24px;
+			&.select-sm {
+				height: 25px !important;
+			    padding: 5px 7px !important;
+			    font-size: 10px !important;
+			    border: 1px solid #ccc !important;
+			}
+			&.input-lg {
+				padding: 0 12px !important;
+			}
+		}
+		&::after {
+			content: "\e628";
+        	font-family: "streamline-24px-filled-in";
+			position: absolute;
+			top: 12px;
+		    right: 10px;
+		    font-size: 7px;
+			color: $gray-dark;
+		}
+
+	}
+
+
+	&.search {
+		.form-control {
+			padding-right: 24px;
+			border-top-color: transparent;
+			border-right-color: transparent;
+			border-left-color: transparent;
+		}
+
+		i {
+			position: absolute;
+			top: 1px;
+			right: 1px;
+			width: 24px;
+			height: 24px;
+			font-size: 12px;
+			line-height: 24px;
+			color: $gray-dark;
+
+			&.clickable {
+				color: rgba($gray-darker, .7);
+				z-index: 1;
+				cursor: pointer;
+
+				//@include transition($transition-ease);
+
+				&:hover {
+					color: $gray-darker;
+				}
+			}
+		}
+	}
+}
+
+.input-checkbox {
+	color: $gray-base;
+	position: relative;
+	display: inline-block;
+	margin: 0;
+	padding-top: ($input-padding-vertical + 3);
+	padding-bottom: ($input-padding-vertical + 3);
+	padding-left: 22px;
+	min-height: 26px;
+	line-height: $line-height-computed;
+
+	input {
+		position: absolute;
+		left: 0;
+		opacity: 0;
+
+		&:checked + span i {
+			color: rgba($input-color, 1);
+		}
+		&:focus + span {
+			border-color: $input-border-focus;
+		}
+
+		&[disabled] + span {
+			background-color:$input-bg-disabled;
+			cursor: $cursor-disabled;
+		}
+	}
+
+	> span {
+		position: absolute;
+		left: 0;
+		width: 16px;
+		height: 16px;
+		border: 1px solid $input-border;
+		background-color: $input-bg;
+		cursor: pointer;
+
+        i {
+            position: absolute;
+            top: 1px; left: 2px;
+            font-size: $input-icon-size;
+            color: rgba($input-color, 0);
+
+            //@include transition(all 0.25s ease);
+        }
+	}
+
+	p { margin: ($grid-gutter-width / 2) 0 0; }
+
+	+ .input-checkbox {
+		margin-left: 10px;
+	}
+}
+
+
+
+.input-radio {
+	position: relative;
+	display: inline-block;
+	margin: 0;
+	padding-top: ($input-padding-vertical + 1);
+	padding-bottom: ($input-padding-vertical + 1);
+	padding-left: 22px;
+	min-height: 26px;
+	line-height: $line-height-computed;
+
+	input {
+		position: absolute;
+		left: 0;
+		opacity: 0;
+
+		&:checked + span i {
+			color: rgba($input-color, 1);
+		}
+		&:focus + span {
+			border-color: $input-border-focus;
+		}
+
+		&[disabled] + span {
+			background-color:$input-bg-disabled;
+			cursor: $cursor-disabled;
+		}
+	}
+
+	span {
+		position: absolute;
+		left: 0;
+		width: 16px;
+		height: 16px;
+		border-radius: 8px;
+		border: 1px solid $input-border;
+		background-color: $input-bg;
+		text-align: center;
+		cursor: pointer;
+
+        i {
+			width: 8px;
+            font-size: $input-icon-size-radio;
+            color: rgba($input-color, 0);
+			line-height: 14px;
+			vertical-align: super;
+
+            //@include transition(all 0.25s ease);
+        }
+	}
+
+	+ .input-radio {
+		margin-left: 10px;
+	}
+
+}
+
+// fieldset[disabled]
+
+fieldset[disabled] {
+	.input-wrapper {
+		.form-control {
+			background-color: $input-bg-disabled;
+		}
+	}
+
+	.input-checkbox,
+	.input-radio,
+	.input-switch {
+		input {
+			+ span {
+				background-color:$input-bg-disabled;
+				cursor: $cursor-disabled;
+			}
+		}
+	}
+
+	.input-legend {
+		input {
+			~ span {
+				cursor: $cursor-disabled;
+
+				&.legend-frame { background-color:$input-bg-disabled; }
+			}
+		}
+	}
+}
