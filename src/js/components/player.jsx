@@ -2,6 +2,7 @@ import React from 'react';
 import {HeaderBlack} from './headerBlack.jsx';
 import {Submenu} from './submenu.jsx';
 import {Image} from './bgimage.jsx';
+import items from './items';
 
 
 class Player extends React.Component{
