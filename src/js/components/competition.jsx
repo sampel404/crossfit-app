@@ -7,6 +7,12 @@ import {Table} from './table.jsx';
 
 class Competition extends React.Component{
     render(){
+        let url = this.props.match.url;
+        let arrUrl = url.split("/");
+        const lastPram = arrUrl[arrUrl.length-1];
+
+        console.log("tyty", lastPram)
+
         return <div>
             <HeaderBlack />
             <Image />

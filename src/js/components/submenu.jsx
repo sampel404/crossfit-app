@@ -18,13 +18,13 @@ class Submenu extends React.Component {
                             Zawody
                         </Link>
                     </li>
-                    {/*<li className="submenu-nav-list-el">*/}
-                        {/*<Link to="/results">*/}
-                            {/*<i className="icon-sl-outline icon-business-chart-2 text-primary font-s36"></i>*/}
-                            {/*<div className="separator half"></div>*/}
-                            {/*Moje wyniki*/}
-                        {/*</Link>*/}
-                    {/*</li>*/}
+                    <li className="submenu-nav-list-el">
+                        <Link to="/results">
+                            <i className="icon-sl-outline icon-business-chart-2 text-primary font-s36"></i>
+                            <div className="separator half"></div>
+                            Moje wyniki
+                        </Link>
+                    </li>
                     <li className="submenu-nav-list-el">
                         <Link to="/records">
                             <i className="icon-sl-outline icon-award-4 text-primary font-s36"></i>

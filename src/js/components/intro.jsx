@@ -15,7 +15,7 @@ class Intro extends React.Component{
                 <div className="banner" id="banner">
                     <article className="banner-slide">
                         <div className="banner-slide-text">
-                            Lubisz <strong>rywalizację?</strong>
+                            Lubisz <strong className="text-primary">rywalizację?</strong>
                             <div className="separator half"></div>
                             Chcesz sprawdzic na jakim <strong>poziomie</strong> jestes?
                         </div>
