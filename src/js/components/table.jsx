@@ -1,11 +1,5 @@
 import React from 'react';
 
-const url = 'https://crossfit-app-cl.firebaseio.com/2018.json';
-
-fetch(url).then(res => res.json())
-    .then(res => console.log(res[0]));
-
-
 class TableHead extends React.Component {
     constructor(props) {
         super(props);
