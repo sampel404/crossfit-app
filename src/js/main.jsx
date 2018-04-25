@@ -5,6 +5,6 @@ import {Routing} from './components/routing.jsx'
 require('../sass/main.scss');
 
 ReactDOM.render(
-    <Routing/>,
+    <Routing id={1}/>,
     document.getElementById('app')
 );

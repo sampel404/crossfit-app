@@ -6,6 +6,7 @@ import {Image} from './bgimage.jsx';
 
 class Results extends React.Component{
     render(){
+        console.log(this.props.txt);
         return <div>
             <HeaderBlack />
             <Image />

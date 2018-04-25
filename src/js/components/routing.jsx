@@ -1,6 +1,5 @@
 import React from 'react';
 import {App} from './app.jsx';
-
 import {
     HashRouter,
     Route,
@@ -16,22 +15,40 @@ import {Records} from './records.jsx';
 import {Profile} from './profile.jsx';
 import {Measurement} from './measurement.jsx';
 
-const Routing = () => {
-    return  <HashRouter>
-            <div>
-             <Switch>
-                 <Route exact path='/' component={App} />
-                 <Route path='/player' component={Player}/>
-                 <Route path='/trainer' component={Trainer}/>
-                 <Route path='/contact' component={Contact} />
-                 <Route path='/results' component={Results}/>
-                 <Route path='/records' component={Records}/>
-                 <Route path='/profile' component={Profile} />
-                 <Route path='/measurement' component={Measurement} />
+class Routing extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            data: null
+        }
+    }
+    componentDidMount(){
+        const url = `https://crossfit-app-cl.firebaseio.com/players_${this.props.id}.json`;
 
-           </Switch>
-           </div>
-       </HashRouter>;
+        fetch(url).then(res => res.json())
+            .then(res => {
+                this.setState({
+                    data: res
+                    })
+                }
+            );
+
+    }
+    render() {
+        return <HashRouter>
+            {/*nawigacja*/}
+            <Switch>
+                <Route exact path='/' component={App}/>
+                <Route path='/player' component={Player}/>
+                <Route path='/trainer' component={Trainer}/>
+                <Route path='/contact' component={Contact}/>
+                <Route path='/results' component={()=> <Results data={this.state.data}/>}/>
+                <Route path='/records' component={()=> <Records data={this.state.data}/>}/>
+                <Route path='/profile' component={Profile}/>
+                <Route path='/measurement' component={Measurement}/>
+            </Switch>
+        </HashRouter>;
+    }
 }
 
 export {Routing}
