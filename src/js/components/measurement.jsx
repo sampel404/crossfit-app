@@ -3,6 +3,8 @@ import {HeaderBlack} from './headerBlack.jsx';
 import {Submenu} from './submenu.jsx';
 import {Image} from './bgimage.jsx';
 import {MeasurementData} from "./measurementData.jsx";
+import {Table} from './table.jsx';
+
 
 
 class Measurement extends React.Component{
@@ -18,11 +20,12 @@ class Measurement extends React.Component{
                     <div className="block-header">
                         <h3 className="block-title">
                             <i className="icon-sl-outline icon-award-3 text-primary push-15-r"></i>
-                            <span>Moje pomiary</span>
+                            <span>OPEN wyniki</span>
                         </h3>
                     </div>
                     <div className="block-content block-content-full">
                         <MeasurementData/>
+                        <Table/>
                     </div>
                 </div>
             </div>

@@ -12,12 +12,19 @@ class Submenu extends React.Component {
         return <nav className="submenu-nav">
                 <ul className="submenu-nav-list">
                     <li className="submenu-nav-list-el">
-                        <Link to="/results">
-                            <i className="icon-sl-outline icon-business-chart-2 text-primary font-s36"></i>
+                        <Link to="/competitionsTable">
+                            <i className="icon-sl-outline icon-goal-1 text-primary font-s36"></i>
                             <div className="separator half"></div>
-                            Moje wyniki
+                            Zawody
                         </Link>
                     </li>
+                    {/*<li className="submenu-nav-list-el">*/}
+                        {/*<Link to="/results">*/}
+                            {/*<i className="icon-sl-outline icon-business-chart-2 text-primary font-s36"></i>*/}
+                            {/*<div className="separator half"></div>*/}
+                            {/*Moje wyniki*/}
+                        {/*</Link>*/}
+                    {/*</li>*/}
                     <li className="submenu-nav-list-el">
                         <Link to="/records">
                             <i className="icon-sl-outline icon-award-4 text-primary font-s36"></i>
@@ -32,7 +39,7 @@ class Submenu extends React.Component {
                     </li>
                     <li className="submenu-nav-list-el">
                         <Link to="/profile">
-                            <i className="icon-sl-outline icon-user-1 text-primary font-s36"></i>
+                            <i className="icon-sl-outline icon-profile-athlete text-primary font-s36"></i>
                             <div className="separator half"></div>Profil
                         </Link>
                     </li>

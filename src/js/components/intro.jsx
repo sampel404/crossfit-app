@@ -14,12 +14,16 @@ class Intro extends React.Component{
                 </div>
                 <div className="banner" id="banner">
                     <article className="banner-slide">
+                        <div className="banner-slide-text">
+                            Lubisz <strong>rywalizację?</strong>
+                            <div className="separator half"></div>
+                            Chcesz sprawdzic na jakim <strong>poziomie</strong> jestes?
+                        </div>
                         <h2 className="banner-slide-title">
-                            CrossFit
+                            <strong>CrossFit</strong> App
                         </h2>
                         <div className="banner-slide-text">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque voluptas inventore officiis quas
-                            nulla labore accusamus, excepturi itaque dolor ut.
+
                         </div>
                         <a href="" className="banner-slide-btn">Dowiedz się więcej</a>
                     </article>
