@@ -32,7 +32,7 @@ class Routing extends React.Component{
         fetch(url).then(res => res.json())
             .then(res => {
                 this.setState({
-                    data: res
+                    data: res[0]
                     })
                 }
             );
