@@ -25,7 +25,7 @@
     user-select: none;
     white-space: nowrap;
     border-top: 0;
-
+    span {
     &.sortable {
       cursor: pointer;
       &:hover {
@@ -34,6 +34,7 @@
     }
 
     &.sorted {
+      width: 10px;
 
       &:after {
         content: "\e621";
@@ -45,12 +46,13 @@
         vertical-align: middle;
       }
 
-      &.up {
+      &.arrow-up {
         &:after {
           content: "\e620";
           font-family: streamline-24px-filled-in;
         }
       }
+    }
     }
   }
   tbody + tbody {

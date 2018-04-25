@@ -40,6 +40,10 @@ body {
   color: $main-color-white !important;
 }
 
+.text-gray-dark {
+  color: $gray-dark;
+}
+
 .bg-black-op {
   background-color: rgba($gray-base, 0.5);
 }
