@@ -2,7 +2,7 @@ import React from 'react';
 import {HeaderBlack} from './headerBlack.jsx';
 import {Submenu} from './submenu.jsx';
 import {Image} from './bgimage.jsx';
-import {Table} from './table.jsx';
+
 
 
 class Trainer extends React.Component{
@@ -22,7 +22,7 @@ class Trainer extends React.Component{
                         </h3>
                     </div>
                     <div className="block-content block-content-full">
-                        <Table/>
+
                     </div>
                 </div>
             </div>

@@ -260,8 +260,6 @@ a {
   list-style: none;
   padding: 0;
   margin: 0;
-
-
 }
 .submenu-nav-list-el {
    display: inline-block;
@@ -390,7 +388,6 @@ a {
 .banner-slide-title {
   font-size: 100px;
   font-weight: 200;
-  text-transform: uppercase;
   color: #fff;
   text-align: center;
   line-height: 1em;
@@ -404,16 +401,27 @@ a {
   font-weight: 200;
   max-width: 900px;
 }
-.banner-slide-btn {
+.banner-slide-btn, btn-new {
   border: 1px solid rgba(#fff, 0.8);
   background: transparent;
   color: #fff;
-  font-size: 15px;
-  font-weight: bold;
-  padding: 30px;
+  font-size: 12px;
+  font-weight: 400;
+  padding: 20px 40px;
   border-radius: 40px;
   text-decoration: none;
   text-transform: uppercase;
+}
+.btn-new {
+  border: 1px solid rgba($color-primary, 0.8);
+  color: $color-primary;
+  padding: 30px 60px;
+  font-size: 30px;
+  font-weight: 300;
+  &:hover {
+    background-color: $color-primary;
+    color: #fff;
+  }
 }
 .banner-prev,
 .banner-next {
@@ -445,27 +453,29 @@ a {
 
 //animacja slajdow
 
-.banner-slide {
-  opacity: 0;
-  transition: 0.5s  0.5s all;
-}
-
-.banner-slide-title,
-.banner-slide-text,
-.banner-slide-btn {
-  transform: translateX(-30px);
-  opacity: 0;
-}
-
-.banner-slide-title {
-  transition: 1s transform, 1s opacity;
-}
-.banner-slide-text {
-  transition: 1s 0.5s transform, 1s 0.5s opacity;
-}
+//.banner-slide {
+//  opacity: 0;
+//  transition: 0.5s  0.5s all;
+//}
+//
+//.banner-slide-title,
+//.banner-slide-text,
+//.banner-slide-btn {
+//  transform: translateX(-30px);
+//  opacity: 0;
+//}
+//
+//.banner-slide-title {
+//  transition: 1s transform, 1s opacity;
+//}
+//.banner-slide-text {
+//  transition: 1s 0.5s transform, 1s 0.5s opacity;
+//}
 .banner-slide-btn {
   transition: 1s 1s transform, 1s 1s opacity;
 }
+
+
 
 .banner-slide-active {
   opacity: 1;
