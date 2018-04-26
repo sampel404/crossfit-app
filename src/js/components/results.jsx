@@ -41,7 +41,6 @@ const menuObject = [
 
 class Results extends React.Component{
     render(){
-        console.log(this.props.label);
         return <div>
             <HeaderBlack />
             <Image />
@@ -59,7 +58,7 @@ class Results extends React.Component{
                         </h3>
                     </div>
                     <div className="block-content block-content-full">
-                        <h1>{this.props.label}</h1>
+                        {/*<h1>{this.props.label}</h1>*/}
                     </div>
                 </div>
             </div>

@@ -23,7 +23,8 @@ class Routing extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            data: null
+            data: null,
+            name: null
         }
     }
     componentDidMount(){
@@ -32,7 +33,8 @@ class Routing extends React.Component{
         fetch(url).then(res => res.json())
             .then(res => {
                 this.setState({
-                    data: res[0]
+                    data: res[0],
+                    name: res[0].name
                     })
                 }
             );
@@ -42,12 +44,12 @@ class Routing extends React.Component{
             {/*nawigacja*/}
             <Switch>
                 <Route exact path='/' component={App}/>
-                <Route path='/player' component={Player}/>
+                <Route path='/player' component={()=><Player name={this.state.name}/>}/>
                 <Route path='/trainer' component={Trainer}/>
-                <Route path='/contact' component={Contact}/>
+                <Route path='/contact' component={()=><Contact name={this.state.name}/>}/>
                 <Route path='/competition' component={Competition}/>
                 <Route path='/competitionsTable' component={CompetitionsTable}/>
-                <Route path='/results' component={()=> <Results data={this.state.data}/>}/>
+                <Route path='/results' component={()=> <Results name={this.state.name}/>}/>
                 <Route path='/records' component={()=> <Records data={this.state.data}/>}/>
                 <Route path='/profile' component={()=> <Profile loggedAs={this.props.loggedAs}/>}/>
                 <Route path='/measurement' component={Measurement}/>
