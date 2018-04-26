@@ -58,7 +58,32 @@ class Results extends React.Component{
                         </h3>
                     </div>
                     <div className="block-content block-content-full">
-                        {/*<h1>{this.props.label}</h1>*/}
+                        <table className="table table-hover" width="100%">
+                            <thead>
+                            <tr className="headers">
+                                <th className="">Zawody</th>
+                                <th className="">Data</th>
+                                <th className="">Wynik</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>OPEN 2018</td>
+                                <td>12.01.2018</td>
+                                <td>3 miejsce</td>
+                            </tr>
+                            <tr>
+                                <td>CROSS CORE</td>
+                                <td>16.02.2018</td>
+                                <td>4 miejsce</td>
+                            </tr>
+                            <tr>
+                                <td>MARINA</td>
+                                <td>18.04.2018</td>
+                                <td>6 miejsce</td>
+                            </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>

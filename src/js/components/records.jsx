@@ -53,7 +53,7 @@ class Records extends React.Component{
         
         return <div>
             <HeaderBlack />
-            <Image />
+            <Image name={this.props.name} imgHeader={this.props.imgHeader} />
             <div className="container">
                 <div className="separator double"></div>
                 <Submenu />

@@ -27,35 +27,34 @@ class CompetitionsTable extends React.Component{
                     <div className="block-content block-content-full">
                         <div className="row">
                             <div className="col-md-6 col-xs-12">
-                        <table className="table table-vcenter table-hover table-striped" width="100%">
-                            <thead>
-                                <tr>
-                                    <th>Lp</th>
-                                    <th>Nazwa</th>
-                                    <th>Data</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>
-                                        <Link to="/competition"
-                                              className="link link-effect">OPEN</Link></td>
-                                    <td>12.03.2018</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>REGIONALS</td>
-                                    <td>02.04.2018</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>CF3M</td>
-                                    <td>22.04.2018</td>
-                                </tr>
-                            </tbody>
-
-                        </table>
+                                <table className="table table-vcenter table-hover table-striped" width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th>Lp</th>
+                                            <th>Nazwa</th>
+                                            <th>Data</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>
+                                                <Link to="/competition"
+                                                      className="link link-effect">OPEN</Link></td>
+                                            <td>12.03.2018</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>REGIONALS</td>
+                                            <td>02.04.2018</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>CF3M</td>
+                                            <td>22.04.2018</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                             <div className="col-md-6 col-xs-12 text-center">
                                 <div className="separator"></div>

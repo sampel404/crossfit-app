@@ -27,7 +27,26 @@ class MeasurementData extends React.Component{
 
 
     render(){
-        return <h1>measurement</h1>
+        return <table className="table table-hover" width="100%">
+            <thead>
+                <tr className="headers">
+                    <th className="">Utworzony dnia</th>
+                    <th className="">Wzrost</th>
+                    <th className="">Waga</th>
+                    <th className="">Tłuszcz</th>
+                    <th className="">BMI</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>12.03.2018</td>
+                    <td>183 cm</td>
+                    <td>86 kg</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
     }
 }
 
