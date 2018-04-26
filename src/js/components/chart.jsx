@@ -2,60 +2,133 @@ import React from 'react';
 import {Line} from 'react-chartjs-2';
 
 
-const data = {
-    labels: ["12/03", "13/03", "11/04", "13/04", "18/04", "12/05"],
-    datasets: [
-        {
-            backgroundColor: 'transparent',
-            borderColor: '#333',
-            lineTension: 0,
-            label: 'num of reps',
-            data: [12, 19, 3, 5, 2, 3]
-        },
-        {
-            backgroundColor: 'transparent',
-            borderColor: '#aaa',
-            lineTension: 0,
-            label: 'othr',
-            data: [11, 11, 4, 2, 9, 7]
-        }
-
-    ]
-};
-
-
 class Chart extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             person: this.props.data,
-            exercise: '_1km'
+            exercise: '_1km',
+            toCompare: '',
+            toCompareData: null,
+            toCompareResults: {
+                label : '',
+                backgroundColor: 'transparent',
+                borderColor: 'transparent'
+            }
         }
     }
 
-    componentDidMount(){
+    changeExercise=(e)=>{
+        this.setState({
+            exercise: e.target.value
+        });
+    };
 
-    }
+    changeToCompare=(e)=>{
+        this.setState({
+            toCompare: e.target.value
+        });
+    };
+
+    compare=(e)=>{
+        e.preventDefault();
+        const url = `https://crossfit-app-cl.firebaseio.com/players_${this.state.toCompare}.json`;
+        fetch(url).then(res => res.json())
+            .then(res => {
+                    class DataSet {
+                        constructor(label, data) {
+                            this.backgroundColor ='transparent';
+                            this.borderColor = '#666';
+                            this.lineTension = 0;
+                            this.label = label;
+                            this.data = data;
+                            this.radius = 2
+                        }
+                    }
+
+                    const label = res[0].name + ' ' + res[0].surname;
+
+                    const tempData = [];
+
+                    res[0].exercises[this.state.exercise].forEach(el=>{
+                        tempData.push(el.result)
+                    });
+                    
+                    this.setState({
+                        toCompareData: res[0].exercises[this.state.exercise],
+                        toCompareResults: new DataSet(label, tempData.splice(-5))
+                    });
+                }
+            );
+    };
 
     render(){
+        this.data = {
+            labels: [],
+            datasets: [
+                {
+                    backgroundColor: 'transparent',
+                    borderColor: '#ff4103',
+                    lineTension: 0,
+                    label: null,
+                    data: null,
+                    radius: 2
+                },
+                this.state.toCompareResults
+            ]
+        };
+
         let options;
 
         if(this.state.person != null){
-            options = Object.keys(this.props.data.excercises).map(el=>{
-                return <option key={el} value={el}>{el}</option>
+
+            const l = this.state.person.exercises[this.state.exercise].length > 5 ?
+                5 : this.state.person.exercises[this.state.exercise].length;
+
+            for(let i = 1; i <= l; i++) {
+                this.data.labels.push(i)
+            }
+
+            const tempData = [];
+
+            this.state.person.exercises[this.state.exercise].forEach(el=>{
+                tempData.push(el.result)
+            });
+
+            this.data.datasets[0].data = tempData.splice(-5);
+            this.data.datasets[0].label = this.state.person.name;
+
+            options = Object.keys(this.props.data.exercises).map(el=>{
+                return <option key={el} value={el}>{el==='_1km' ? '1km run': el}</option>
             })
         }
         return <div>
-            <select>
-                {options}
-            </select>
+            <form onSubmit={this.compare}>
+                <select value={this.state.exercise} onChange={this.changeExercise}>
+                    {options}
+                </select>
+                <input type='number' value={this.state.toCompare} onChange={this.changeToCompare}/>
+                <button>compare</button>
+            </form>
             <div>
                 <Line
-                    data={data}
+                    data={this.data}
                     width={400}
-                    height={250}
+                    height={400}
                     options={{
-                        maintainAspectRatio: false
+                        maintainAspectRatio: false,
+                        scales: {
+                            xAxes: [{
+                                gridLines: {
+                                    display:false
+                                }
+                            }],
+                            yAxes: [{
+                                gridLines: {
+                                    display:false
+                                }
+                            }]
+                        }
                     }}
                 />
             </div>

@@ -25,7 +25,6 @@ class Measurement extends React.Component{
                     </div>
                     <div className="block-content block-content-full">
                         <MeasurementData/>
-                        <Table/>
                     </div>
                 </div>
             </div>
