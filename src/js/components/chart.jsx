@@ -30,6 +30,12 @@ class Chart extends React.Component {
         });
     };
 
+    componentWillReceiveProps(nextProps){
+        this.setState({
+            person: nextProps.data
+        })
+    }
+
     compare=(e)=>{
         e.preventDefault();
         const url = `https://crossfit-app-cl.firebaseio.com/players_${this.state.toCompare}.json`;
@@ -82,26 +88,37 @@ class Chart extends React.Component {
 
         if(this.state.person != null){
 
-            const l = this.state.person.exercises[this.state.exercise].length > 5 ?
-                5 : this.state.person.exercises[this.state.exercise].length;
+            // const l = this.state.person.exercises[this.state.exercise].length > 5 ?
+            //     5 : this.state.person.exercises[this.state.exercise].length;
 
-            for(let i = 1; i <= l; i++) {
-                this.data.labels.push(i)
+            // for(let i = 1; i <= 5; i++) {
+            //     this.data.labels.push(i)
+            // }
+
+            let tempData = [];
+            let i = 1;
+
+            const obj = this.state.person.exercises[this.state.exercise];
+
+            for (let property in obj) {
+                if (obj.hasOwnProperty(property)) {
+                    tempData.push(parseFloat(obj[property].result));
+                    this.data.labels.push(i);
+                    i++
+                }
             }
 
-            const tempData = [];
+            console.log(tempData);
+            tempData = tempData.splice(-5);
 
-            this.state.person.exercises[this.state.exercise].forEach(el=>{
-                tempData.push(el.result)
-            });
-
-            this.data.datasets[0].data = tempData.splice(-5);
+            this.data.datasets[0].data = tempData;
             this.data.datasets[0].label = this.state.person.name;
 
             options = Object.keys(this.props.data.exercises).map(el=>{
                 return <option key={el} value={el}>{el==='_1km' ? '1km run': el}</option>
             })
         }
+
         return <div>
             <form onSubmit={this.compare}>
                 <select value={this.state.exercise} onChange={this.changeExercise}>

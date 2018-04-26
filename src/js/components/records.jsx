@@ -7,19 +7,50 @@ import fire from "../fire";
 
 
 class Records extends React.Component{
-
-    updateDB(){
-        let messagesRef = fire.database().ref('players_1');
-        console.log('cos2');
-        let newPostKey = fire.database().ref('players_1').child('0');
-        //.push().key;
-        console.log(newPostKey);
-        // fire.database().ref('players_1').push( {
-        //     id: 129,
-        //     ppp: 2
-        // } );
+    constructor(props) {
+        super(props);
+        this.state = {
+            person: this.props.data,
+            exercise: '_1km',
+            val: ''
+        };
     }
+
+    changeExercise=(e)=>{
+        this.setState({
+            exercise: e.target.value
+        });
+    };
+
+    changeValue=(e)=>{
+        this.setState({
+            val: e.target.value
+        });
+    };
+
+    updateDB=(e)=>{
+        e.preventDefault()
+        let path = fire.database().ref('players_1')
+            .child('0')
+            .child('exercises')
+            .child(this.state.exercise);
+        //.push().key;
+        const now = new Date;
+        const nowDate = `${now.getDay()}.${now.getMonth()}.${now.getFullYear()}`
+        path.push( {
+            date: nowDate,
+            result: this.state.val
+        } );
+    };
     render(){
+        let options;
+
+        if(this.state.person) {
+            options = Object.keys(this.state.person.exercises).map(el => {
+                return <option key={el} value={el}>{el === '_1km' ? '1km run' : el}</option>
+            });
+        }
+        
         return <div>
             <HeaderBlack />
             <Image />
@@ -36,8 +67,16 @@ class Records extends React.Component{
                     </div>
                     <div className="block-content block-content-full">
                         <Chart data={this.props.data} />
+                        
+                        
 
-                        <button onClick={this.updateDB}>UPDATE</button>
+                        <form onSubmit={this.updateDB}>
+                            <select value={this.state.exercise} onChange={this.changeExercise}>
+                                {options}
+                            </select>
+                            <input type='number' value={this.state.val} onChange={this.changeValue}/>
+                            <button>Dodaj</button>
+                        </form>
                     </div>
                 </div>
             </div>
