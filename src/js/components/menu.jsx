@@ -3,11 +3,13 @@ import {
     Link
 } from 'react-router-dom';
 // import submenu from './submenu.js';
+import config from '../config.js';
 
 
 
 class Menu extends React.Component {
     render() {
+        console.log("config",this.props.menu)
         return (
             <nav className="submenu-nav">
                 <ul className="submenu-nav-list">

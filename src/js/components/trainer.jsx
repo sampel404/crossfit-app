@@ -9,7 +9,7 @@ class Trainer extends React.Component{
     render(){
         return <div>
             <HeaderBlack />
-            <Image />
+            <Image name={this.props.name} imgHeader={this.props.imgHeader} />
             <div className="container">
                 <div className="separator double"></div>
                 <Submenu />

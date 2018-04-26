@@ -7,7 +7,7 @@ class Contact extends React.Component{
     render(){
         return <div>
             <HeaderBlack />
-            <Image name={this.props.name} />
+            <Image name={this.props.name} imgHeader={this.props.imgHeader}/>
             <div className="container">
                 <div className="separator double"></div>
                 <div className="block">
