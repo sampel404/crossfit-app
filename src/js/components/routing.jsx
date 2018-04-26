@@ -16,8 +16,15 @@ import {Results} from './results.jsx';
 import {Records} from './records.jsx';
 import {Profile} from './profile.jsx';
 import {Measurement} from './measurement.jsx';
-import {PlayersTable} from './playersTable.jsx';
 
+
+// const routes = [
+//     {
+//         path:'/',
+//         exact: true,
+//         component: () => <App />
+//     },
+// ]
 
 class Routing extends React.Component{
     constructor(props){
@@ -43,17 +50,16 @@ class Routing extends React.Component{
         return <HashRouter>
             {/*nawigacja*/}
             <Switch>
-                <Route exact path='/' component={App}/>
-                <Route path='/player' component={()=><Player name={this.state.name}/>}/>
+                <Route exact path='/' component={() => <App />}/>
+                <Route path='/player' component={()=><Player name={this.state.name} imgHeader="player"/>}/>
                 <Route path='/trainer' component={Trainer}/>
-                <Route path='/contact' component={()=><Contact name={this.state.name}/>}/>
-                <Route path='/competition' component={Competition}/>
-                <Route path='/competitionsTable' component={CompetitionsTable}/>
-                <Route path='/results' component={()=> <Results name={this.state.name}/>}/>
-                <Route path='/records' component={()=> <Records data={this.state.data}/>}/>
-                <Route path='/profile' component={()=> <Profile loggedAs={this.props.loggedAs}/>}/>
-                <Route path='/measurement' component={Measurement}/>
-                 <Route path='/playersTable' component={PlayersTable}/>
+                <Route path='/contact' component={()=><Contact name={this.state.name} imgHeader="contact"/>}/>
+                <Route path='/competition' component={()=><Competition name={this.state.name} imgHeader="competition"/>}/>
+                <Route path='/competitionsTable' component={()=><CompetitionsTable name={this.state.name} imgHeader="competitionsTable"/>}/>
+                <Route path='/results' component={()=> <Results name={this.state.name} imgHeader="results"/>}/>
+                <Route path='/records' component={()=> <Records data={this.state.data} imgHeader="records"/>}/>
+                <Route path='/profile' component={()=> <Profile loggedAs={this.props.loggedAs} imgHeader="profile" />}/>
+                <Route path='/measurement' component={()=><Measurement name={this.state.name} imgHeader="measurement"/>}/>
             </Switch>
         </HashRouter>;
     }

@@ -1,10 +1,16 @@
 import React from 'react';
-// import {Submenu} from './submenu.jsx';
+// import imageUrl from '../../../images/records.jpg';
+
+
 
 
 class Image extends React.Component{
     render(){
-        return <div className="bg-image overflow-hidden">
+        console.log(this.props);
+
+        const urlBg = '../../../images/' + this.props.imgHeader + ".jpg";
+
+        return <div className="bg-image overflow-hidden" style={{backgroundImage: `url(${urlBg})`}}>
             <div className="bg-black-op">
                 <div className="content content-narrow">
                     <div className="block block-no-margin block-transparent">
