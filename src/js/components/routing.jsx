@@ -52,7 +52,7 @@ class Routing extends React.Component{
             <Switch>
                 <Route exact path='/' component={() => <App />}/>
                 <Route path='/player' component={()=><Player name={this.state.name} imgHeader="player"/>}/>
-                <Route path='/trainer' component={Trainer}/>
+                <Route path='/trainer' component={()=><Trainer imgHeader="trainer"/>}/>
                 <Route path='/contact' component={()=><Contact name={this.state.name} imgHeader="contact"/>}/>
                 <Route path='/competition' component={()=><Competition name={this.state.name} imgHeader="competition"/>}/>
                 <Route path='/competitionsTable' component={()=><CompetitionsTable name={this.state.name} imgHeader="competitionsTable"/>}/>
