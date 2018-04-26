@@ -121,12 +121,21 @@ class Chart extends React.Component {
 
         return <div>
             <form onSubmit={this.compare}>
-                <select value={this.state.exercise} onChange={this.changeExercise}>
-                    {options}
-                </select>
-                <input type='number' value={this.state.toCompare} onChange={this.changeToCompare}/>
-                <button>compare</button>
+                <div className="row">
+                    <div className="col-xs-2">
+                        <select className="form-control" value={this.state.exercise} onChange={this.changeExercise}>
+                            {options}
+                        </select>
+                    </div>
+                    <div className="col-xs-2">
+                        <input className="form-control" placeholder="podaj id użytkownika" type='number' value={this.state.toCompare} onChange={this.changeToCompare}/>
+                    </div>
+                    <div className="col-xs-2">
+                        <button className="btn btn-primary">Porównaj wyniki</button>
+                    </div>
+                </div>
             </form>
+            <div className="separator double"></div>
             <div>
                 <Line
                     data={this.data}

@@ -68,14 +68,21 @@ class Records extends React.Component{
                     <div className="block-content block-content-full">
                         <Chart data={this.props.data} />
                         
-                        
-
+                        <div className="separator double"></div>
                         <form onSubmit={this.updateDB}>
-                            <select value={this.state.exercise} onChange={this.changeExercise}>
-                                {options}
-                            </select>
-                            <input type='number' value={this.state.val} onChange={this.changeValue}/>
-                            <button>Dodaj</button>
+                            <div className="row">
+                                <div className="col-xs-2">
+                                    <select className="form-control" value={this.state.exercise} onChange={this.changeExercise}>
+                                        {options}
+                                    </select>
+                                </div>
+                                <div className="col-xs-2">
+                                    <input className="form-control" type='number' value={this.state.val} onChange={this.changeValue}/>
+                                </div>
+                                <div className="col-xs-2">
+                                    <button className="btn btn-primary">Dodaj</button>
+                                </div>
+                            </div>
                         </form>
                     </div>
                 </div>
