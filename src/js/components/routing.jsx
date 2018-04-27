@@ -46,6 +46,19 @@ class Routing extends React.Component{
                 }
             );
     }
+
+    fetchAgain=()=>{
+        const url = `https://crossfit-app-cl.firebaseio.com/players_${this.props.id}.json`;
+
+        fetch(url).then(res => res.json())
+            .then(res => {
+                    this.setState({
+                        data: res[0],
+                        name: res[0].name
+                    })
+                }
+            );
+    };
     render() {
         return <HashRouter>
             {/*nawigacja*/}
@@ -57,7 +70,7 @@ class Routing extends React.Component{
                 <Route path='/competition' component={()=><Competition name={this.state.name} imgHeader="competition"/>}/>
                 <Route path='/competitionsTable' component={()=><CompetitionsTable name={this.state.name} imgHeader="competitionsTable"/>}/>
                 <Route path='/results' component={()=> <Results name={this.state.name} imgHeader="results"/>}/>
-                <Route path='/records' component={()=> <Records data={this.state.data} imgHeader="records"/>}/>
+                <Route path='/records' component={()=> <Records data={this.state.data} imgHeader="records" fetchAgain={this.fetchAgain}/>}/>
                 <Route path='/profile' component={()=> <Profile loggedAs={this.props.loggedAs} imgHeader="profile" />}/>
                 <Route path='/measurement' component={()=><Measurement name={this.state.name} imgHeader="measurement"/>}/>
             </Switch>

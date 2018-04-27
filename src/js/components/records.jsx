@@ -10,38 +10,12 @@ class Records extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-            person: this.props.data,
-            exercise: '_1km',
-            val: ''
+            person: this.props.data
         };
     }
 
-    changeExercise=(e)=>{
-        this.setState({
-            exercise: e.target.value
-        });
-    };
 
-    changeValue=(e)=>{
-        this.setState({
-            val: e.target.value
-        });
-    };
 
-    updateDB=(e)=>{
-        e.preventDefault()
-        let path = fire.database().ref('players_1')
-            .child('0')
-            .child('exercises')
-            .child(this.state.exercise);
-        //.push().key;
-        const now = new Date;
-        const nowDate = `${now.getDay()}.${now.getMonth()}.${now.getFullYear()}`
-        path.push( {
-            date: nowDate,
-            result: this.state.val
-        } );
-    };
     render(){
         let options;
 
@@ -66,24 +40,7 @@ class Records extends React.Component{
                         </h3>
                     </div>
                     <div className="block-content block-content-full">
-                        <Chart data={this.props.data} />
-                        
-                        <div className="separator double"></div>
-                        <form onSubmit={this.updateDB}>
-                            <div className="row">
-                                <div className="col-xs-2">
-                                    <select className="form-control" value={this.state.exercise} onChange={this.changeExercise}>
-                                        {options}
-                                    </select>
-                                </div>
-                                <div className="col-xs-2">
-                                    <input className="form-control" type='number' value={this.state.val} onChange={this.changeValue}/>
-                                </div>
-                                <div className="col-xs-2">
-                                    <button className="btn btn-primary">Dodaj</button>
-                                </div>
-                            </div>
-                        </form>
+                        <Chart data={this.props.data} fetchAgain={this.props.fetchAgain}/>
                     </div>
                 </div>
             </div>

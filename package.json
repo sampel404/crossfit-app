@@ -42,6 +42,7 @@
     "firebase": "^4.13.1",
     "firebase-tools": "^3.18.4",
     "node-gyp": "^3.6.2",
+    "npm": "^6.0.0",
     "react": "^15.4.0",
     "react-chartjs-2": "^2.7.0",
     "react-dom": "^15.4.0",

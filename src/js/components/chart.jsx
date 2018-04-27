@@ -1,5 +1,7 @@
 import React from 'react';
 import {Line} from 'react-chartjs-2';
+import fire from "../fire";
+import config from "../config"
 
 
 class Chart extends React.Component {
@@ -14,9 +16,34 @@ class Chart extends React.Component {
                 label : '',
                 backgroundColor: 'transparent',
                 borderColor: 'transparent'
-            }
+            },
+            val: '',
+            rerender: 0,
         }
     }
+
+    changeValue=(e)=>{
+        this.setState({
+            val: e.target.value
+        });
+    };
+
+    updateDB=(e)=>{
+        e.preventDefault();
+        let path = fire.database().ref(`players_${config.playerId}`)
+            .child('0')
+            .child('exercises')
+            .child(this.state.exercise);
+        const now = new Date;
+        const nowDate = `${now.getDay()}.${now.getMonth()}.${now.getFullYear()}`
+        path.push( {
+            date: nowDate,
+            result: this.state.val
+        } ).then(
+            setTimeout(()=>{this.props.fetchAgain()}, 1000)
+        );
+
+    };
 
     changeExercise=(e)=>{
         this.setState({
@@ -44,7 +71,7 @@ class Chart extends React.Component {
                     class DataSet {
                         constructor(label, data) {
                             this.backgroundColor ='transparent';
-                            this.borderColor = '#666';
+                            this.borderColor = '#888';
                             this.lineTension = 0;
                             this.label = label;
                             this.data = data;
@@ -59,6 +86,11 @@ class Chart extends React.Component {
                     res[0].exercises[this.state.exercise].forEach(el=>{
                         tempData.push(el.result)
                     });
+
+                    while(tempData.length <=5){
+                        tempData.unshift(null)
+                    }
+
                     
                     this.setState({
                         toCompareData: res[0].exercises[this.state.exercise],
@@ -88,12 +120,6 @@ class Chart extends React.Component {
 
         if(this.state.person != null){
 
-            // const l = this.state.person.exercises[this.state.exercise].length > 5 ?
-            //     5 : this.state.person.exercises[this.state.exercise].length;
-
-            // for(let i = 1; i <= 5; i++) {
-            //     this.data.labels.push(i)
-            // }
 
             let tempData = [];
             let i = 1;
@@ -103,12 +129,10 @@ class Chart extends React.Component {
             for (let property in obj) {
                 if (obj.hasOwnProperty(property)) {
                     tempData.push(parseFloat(obj[property].result));
-                    this.data.labels.push(i);
+                    i<=5 && this.data.labels.push(i);
                     i++
                 }
             }
-
-            console.log(tempData);
             tempData = tempData.splice(-5);
 
             this.data.datasets[0].data = tempData;
@@ -158,6 +182,17 @@ class Chart extends React.Component {
                     }}
                 />
             </div>
+            <div className="separator double"></div>
+            <form onSubmit={this.updateDB}>
+                <div className="row">
+                    <div className="col-xs-2">
+                        <input className="form-control" type='number' value={this.state.val} onChange={this.changeValue}/>
+                    </div>
+                    <div className="col-xs-2">
+                        <button className="btn btn-primary">Dodaj</button>
+                    </div>
+                </div>
+            </form>
         </div>
     }
 }
