@@ -40,7 +40,7 @@ class Chart extends React.Component {
             date: nowDate,
             result: this.state.val
         } ).then(
-            setTimeout(()=>{this.props.fetchAgain()}, 1000)
+            setTimeout(()=>{this.props.fetchAgain()}, 2000)
         );
 
     };
