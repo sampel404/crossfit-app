@@ -39,11 +39,32 @@ class MeasurementData extends React.Component{
             </thead>
             <tbody>
                 <tr>
-                    <td>12.03.2018</td>
+                    <td>02.01.2018</td>
                     <td>183 cm</td>
-                    <td>86 kg</td>
-                    <td></td>
-                    <td></td>
+                    <td>82 kg</td>
+                    <td>12%</td>
+                    <td>23.89</td>
+                </tr>
+                <tr>
+                    <td>06.02.2018</td>
+                    <td>183 cm</td>
+                    <td>82 kg</td>
+                    <td>12%</td>
+                    <td>23.89</td>
+                </tr>
+                <tr>
+                    <td>08.03.2018</td>
+                    <td>183 cm</td>
+                    <td>81 kg</td>
+                    <td>12%</td>
+                    <td>23.89</td>
+                </tr>
+                <tr>
+                    <td>12.04.2018</td>
+                    <td>183 cm</td>
+                    <td>80 kg</td>
+                    <td>12%</td>
+                    <td>23.89</td>
                 </tr>
             </tbody>
         </table>
