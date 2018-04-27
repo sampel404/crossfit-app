@@ -21,7 +21,6 @@ class CompetitionsTable extends React.Component{
                         <h3 className="block-title">
                             <i className="icon-sl-outline icon-goal-1 text-primary push-15-r"></i>
                             <span>Zawody</span>
-
                         </h3>
                     </div>
                     <div className="block-content block-content-full">

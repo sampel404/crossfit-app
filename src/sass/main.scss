@@ -55,6 +55,11 @@ body {
 .text-center {
   text-align: center;
 }
+
+.text-right {
+  text-align: right;
+}
+
 .text-uppercase {
   text-transform: uppercase;
 }
@@ -113,6 +118,7 @@ a {
   background-color: $color-primary;
   border-color: $color-primary;
 }
+
 .btn {
   display: inline-block;
   margin-bottom: 0;
@@ -136,6 +142,10 @@ a {
   user-select: none;
 }
 
+.btn-sm {
+  padding: 5px 10px;
+  font-size: 11px;
+}
 .hidden {
   display: none;
 }
