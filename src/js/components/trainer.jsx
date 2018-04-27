@@ -7,6 +7,11 @@ import {Image} from './bgimage.jsx';
 
 class Trainer extends React.Component{
     render(){
+        const styles = {
+            backgroundPosition: '0 20%',
+            color: "red"
+
+        }
         return <div>
             <HeaderBlack />
             <Image imgHeader={this.props.imgHeader} />

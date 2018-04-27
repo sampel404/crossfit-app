@@ -70,17 +70,17 @@ class Results extends React.Component{
                             <tr>
                                 <td>OPEN 2018</td>
                                 <td>12.01.2018</td>
-                                <td>3 miejsce</td>
+                                <td><strong>3</strong> miejsce</td>
                             </tr>
                             <tr>
                                 <td>CROSS CORE</td>
                                 <td>16.02.2018</td>
-                                <td>4 miejsce</td>
+                                <td><strong>4</strong> miejsce</td>
                             </tr>
                             <tr>
                                 <td>MARINA</td>
                                 <td>18.04.2018</td>
-                                <td>6 miejsce</td>
+                                <td><strong>6</strong> miejsce</td>
                             </tr>
                             </tbody>
                         </table>
