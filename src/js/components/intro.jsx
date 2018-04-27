@@ -17,7 +17,7 @@ class Intro extends React.Component{
                         <div className="banner-slide-text">
                             Lubisz <strong className="text-primary">rywalizację?</strong>
                             <div className="separator half"></div>
-                            Chcesz sprawdzic na jakim <strong>poziomie</strong> jestes?
+                            Chcesz sprawdzic na jakim <strong>levelu</strong> jestes?
                         </div>
                         <h2 className="banner-slide-title">
                             <strong>CrossFit</strong> App

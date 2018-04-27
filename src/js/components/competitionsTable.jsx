@@ -44,12 +44,14 @@ class CompetitionsTable extends React.Component{
                                         </tr>
                                         <tr>
                                             <td>2</td>
-                                            <td>REGIONALS</td>
+                                            <td><Link to="/competition"
+                                                      className="link link-effect">REGIONALS</Link></td>
                                             <td>02.04.2018</td>
                                         </tr>
                                         <tr>
                                             <td>3</td>
-                                            <td>CF3M</td>
+                                            <td><Link to="/competition"
+                                                      className="link link-effect">CF3M</Link></td>
                                             <td>22.04.2018</td>
                                         </tr>
                                     </tbody>
