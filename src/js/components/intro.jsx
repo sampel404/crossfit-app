@@ -7,9 +7,9 @@ class Intro extends React.Component{
         return <section className="main-banner" id="mainBanner">
                 <div className="main-banner-video">
                     <video autoPlay loop preload muted>
-                        <source src="/movie/intro_man.webm" type="video/webm"/>
-                        <source src="/movie/intro_man.mp4" type="video/mp4"/>
-                        <source src="/movie/intro_man.ogv" type="video/ogv"/>
+                        <source src="movie/intro_man.webm" type="video/webm"/>
+                        <source src="movie/intro_man.mp4" type="video/mp4"/>
+                        <source src="movie/intro_man.ogv" type="video/ogv"/>
                     </video>
                 </div>
                 <div className="banner" id="banner">
