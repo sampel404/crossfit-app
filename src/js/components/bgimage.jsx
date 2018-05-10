@@ -7,7 +7,7 @@ import React from 'react';
 class Image extends React.Component{
     render(){
 
-        const urlBg = '../../../images/' + this.props.imgHeader + ".jpg";
+        const urlBg = 'images/' + this.props.imgHeader + ".jpg";
 
         const urlValue = window.location.href.split('/');
         const place = urlValue[urlValue.length-1];

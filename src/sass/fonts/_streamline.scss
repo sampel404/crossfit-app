@@ -2,11 +2,11 @@
 
 @font-face {
     font-family: 'streamline-24px';
-    src: url('/fonts/streamline-24px.woff') format("woff");
+    src: url('fonts/streamline-24px.woff') format("woff");
     
     src:
-      url('/fonts/streamline-24px.woff') format("woff"),
-      url('/fonts/streamline-24px.ttf') format("truetype");
+      url('fonts/streamline-24px.woff') format("woff"),
+      url('fonts/streamline-24px.ttf') format("truetype");
     font-weight: normal;
     font-style: normal;
 }
@@ -39,8 +39,8 @@
 @font-face {
   font-family: "streamline-24px-filled-in";
   src:
-      url('/fonts/streamline-24px-filled-in.woff') format("woff"),
-      url('/fonts/streamline-24px-filled-in.ttf') format("truetype");
+      url('fonts/streamline-24px-filled-in.woff') format("woff"),
+      url('fonts/streamline-24px-filled-in.ttf') format("truetype");
   font-weight: normal;
   font-style: normal;
 }
