@@ -16,5 +16,5 @@
   * generate chart form your results in database [here](https://sampel404.github.io/crossfit-app/#/records)
     * change exercise
     * add new result
-    * compare with other user (id)
+    * compare with other user (id), but in database is ony 5 users.
 
